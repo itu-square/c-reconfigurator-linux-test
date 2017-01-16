@@ -1,0 +1,112 @@
+// /*AFLA*/ #ifndef VM_EVENT_ITEM_H_INCLUDED
+// /*AFLA*/ #define VM_EVENT_ITEM_H_INCLUDED
+// /*AFLA*/ 
+// /*AFLA*/ #ifdef CONFIG_ZONE_DMA
+// /*AFLA*/ #define DMA_ZONE(xx) xx##_DMA,
+// /*AFLA*/ #else
+// /*AFLA*/ #define DMA_ZONE(xx)
+// /*AFLA*/ #endif
+// /*AFLA*/ 
+// /*AFLA*/ #ifdef CONFIG_ZONE_DMA32
+// /*AFLA*/ #define DMA32_ZONE(xx) xx##_DMA32,
+// /*AFLA*/ #else
+// /*AFLA*/ #define DMA32_ZONE(xx)
+// /*AFLA*/ #endif
+// /*AFLA*/ 
+// /*AFLA*/ #ifdef CONFIG_HIGHMEM
+// /*AFLA*/ #define HIGHMEM_ZONE(xx) xx##_HIGH,
+// /*AFLA*/ #else
+// /*AFLA*/ #define HIGHMEM_ZONE(xx)
+// /*AFLA*/ #endif
+// /*AFLA*/ 
+// /*AFLA*/ #define FOR_ALL_ZONES(xx) DMA_ZONE(xx) DMA32_ZONE(xx) xx##_NORMAL, HIGHMEM_ZONE(xx) xx##_MOVABLE
+// /*AFLA*/ 
+// /*AFLA*/ enum vm_event_item { PGPGIN, PGPGOUT, PSWPIN, PSWPOUT,
+// /*AFLA*/ 		FOR_ALL_ZONES(PGALLOC),
+// /*AFLA*/ 		FOR_ALL_ZONES(ALLOCSTALL),
+// /*AFLA*/ 		FOR_ALL_ZONES(PGSCAN_SKIP),
+// /*AFLA*/ 		PGFREE, PGACTIVATE, PGDEACTIVATE,
+// /*AFLA*/ 		PGFAULT, PGMAJFAULT,
+// /*AFLA*/ 		PGLAZYFREED,
+// /*AFLA*/ 		PGREFILL,
+// /*AFLA*/ 		PGSTEAL_KSWAPD,
+// /*AFLA*/ 		PGSTEAL_DIRECT,
+// /*AFLA*/ 		PGSCAN_KSWAPD,
+// /*AFLA*/ 		PGSCAN_DIRECT,
+// /*AFLA*/ 		PGSCAN_DIRECT_THROTTLE,
+// /*AFLA*/ #ifdef CONFIG_NUMA
+// /*AFLA*/ 		PGSCAN_ZONE_RECLAIM_FAILED,
+// /*AFLA*/ #endif
+// /*AFLA*/ 		PGINODESTEAL, SLABS_SCANNED, KSWAPD_INODESTEAL,
+// /*AFLA*/ 		KSWAPD_LOW_WMARK_HIT_QUICKLY, KSWAPD_HIGH_WMARK_HIT_QUICKLY,
+// /*AFLA*/ 		PAGEOUTRUN, PGROTATED,
+// /*AFLA*/ 		DROP_PAGECACHE, DROP_SLAB,
+// /*AFLA*/ #ifdef CONFIG_NUMA_BALANCING
+// /*AFLA*/ 		NUMA_PTE_UPDATES,
+// /*AFLA*/ 		NUMA_HUGE_PTE_UPDATES,
+// /*AFLA*/ 		NUMA_HINT_FAULTS,
+// /*AFLA*/ 		NUMA_HINT_FAULTS_LOCAL,
+// /*AFLA*/ 		NUMA_PAGE_MIGRATE,
+// /*AFLA*/ #endif
+// /*AFLA*/ #ifdef CONFIG_MIGRATION
+// /*AFLA*/ 		PGMIGRATE_SUCCESS, PGMIGRATE_FAIL,
+// /*AFLA*/ #endif
+// /*AFLA*/ #ifdef CONFIG_COMPACTION
+// /*AFLA*/ 		COMPACTMIGRATE_SCANNED, COMPACTFREE_SCANNED,
+// /*AFLA*/ 		COMPACTISOLATED,
+// /*AFLA*/ 		COMPACTSTALL, COMPACTFAIL, COMPACTSUCCESS,
+// /*AFLA*/ 		KCOMPACTD_WAKE,
+// /*AFLA*/ #endif
+// /*AFLA*/ #ifdef CONFIG_HUGETLB_PAGE
+// /*AFLA*/ 		HTLB_BUDDY_PGALLOC, HTLB_BUDDY_PGALLOC_FAIL,
+// /*AFLA*/ #endif
+// /*AFLA*/ 		UNEVICTABLE_PGCULLED,	/* culled to noreclaim list */
+// /*AFLA*/ 		UNEVICTABLE_PGSCANNED,	/* scanned for reclaimability */
+// /*AFLA*/ 		UNEVICTABLE_PGRESCUED,	/* rescued from noreclaim list */
+// /*AFLA*/ 		UNEVICTABLE_PGMLOCKED,
+// /*AFLA*/ 		UNEVICTABLE_PGMUNLOCKED,
+// /*AFLA*/ 		UNEVICTABLE_PGCLEARED,	/* on COW, page truncate */
+// /*AFLA*/ 		UNEVICTABLE_PGSTRANDED,	/* unable to isolate on unlock */
+// /*AFLA*/ #ifdef CONFIG_TRANSPARENT_HUGEPAGE
+// /*AFLA*/ 		THP_FAULT_ALLOC,
+// /*AFLA*/ 		THP_FAULT_FALLBACK,
+// /*AFLA*/ 		THP_COLLAPSE_ALLOC,
+// /*AFLA*/ 		THP_COLLAPSE_ALLOC_FAILED,
+// /*AFLA*/ 		THP_FILE_ALLOC,
+// /*AFLA*/ 		THP_FILE_MAPPED,
+// /*AFLA*/ 		THP_SPLIT_PAGE,
+// /*AFLA*/ 		THP_SPLIT_PAGE_FAILED,
+// /*AFLA*/ 		THP_DEFERRED_SPLIT_PAGE,
+// /*AFLA*/ 		THP_SPLIT_PMD,
+// /*AFLA*/ 		THP_ZERO_PAGE_ALLOC,
+// /*AFLA*/ 		THP_ZERO_PAGE_ALLOC_FAILED,
+// /*AFLA*/ #endif
+// /*AFLA*/ #ifdef CONFIG_MEMORY_BALLOON
+// /*AFLA*/ 		BALLOON_INFLATE,
+// /*AFLA*/ 		BALLOON_DEFLATE,
+// /*AFLA*/ #ifdef CONFIG_BALLOON_COMPACTION
+// /*AFLA*/ 		BALLOON_MIGRATE,
+// /*AFLA*/ #endif
+// /*AFLA*/ #endif
+// /*AFLA*/ #ifdef CONFIG_DEBUG_TLBFLUSH
+// /*AFLA*/ #ifdef CONFIG_SMP
+// /*AFLA*/ 		NR_TLB_REMOTE_FLUSH,	/* cpu tried to flush others' tlbs */
+// /*AFLA*/ 		NR_TLB_REMOTE_FLUSH_RECEIVED,/* cpu received ipi for flush */
+// /*AFLA*/ #endif /* CONFIG_SMP */
+// /*AFLA*/ 		NR_TLB_LOCAL_FLUSH_ALL,
+// /*AFLA*/ 		NR_TLB_LOCAL_FLUSH_ONE,
+// /*AFLA*/ #endif /* CONFIG_DEBUG_TLBFLUSH */
+// /*AFLA*/ #ifdef CONFIG_DEBUG_VM_VMACACHE
+// /*AFLA*/ 		VMACACHE_FIND_CALLS,
+// /*AFLA*/ 		VMACACHE_FIND_HITS,
+// /*AFLA*/ 		VMACACHE_FULL_FLUSHES,
+// /*AFLA*/ #endif
+// /*AFLA*/ 		NR_VM_EVENT_ITEMS
+// /*AFLA*/ };
+// /*AFLA*/ 
+// /*AFLA*/ #ifndef CONFIG_TRANSPARENT_HUGEPAGE
+// /*AFLA*/ #define THP_FILE_ALLOC ({ BUILD_BUG(); 0; })
+// /*AFLA*/ #define THP_FILE_MAPPED ({ BUILD_BUG(); 0; })
+// /*AFLA*/ #endif
+// /*AFLA*/ 
+// /*AFLA*/ #endif		/* VM_EVENT_ITEM_H_INCLUDED */
