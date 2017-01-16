@@ -1,0 +1,4 @@
+.directory
+*.bc
+target/**
+variant/**
