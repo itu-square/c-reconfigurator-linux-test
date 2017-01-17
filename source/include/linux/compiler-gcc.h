@@ -134,164 +134,164 @@
 # define __used			__attribute__((__used__))
 #endif
 
-// /*AFLA*/ #ifdef CONFIG_GCOV_KERNEL
-// /*AFLA*/ # if GCC_VERSION < 30400
-// /*AFLA*/ #   error "GCOV profiling support for gcc versions below 3.4 not included"
-// /*AFLA*/ # endif /* __GNUC_MINOR__ */
-// /*AFLA*/ #endif /* CONFIG_GCOV_KERNEL */
-// /*AFLA*/ 
-// /*AFLA*/ #if GCC_VERSION >= 30400
-// /*AFLA*/ #define __must_check		__attribute__((warn_unused_result))
-// /*AFLA*/ #define __malloc		__attribute__((__malloc__))
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #if GCC_VERSION >= 40000
-// /*AFLA*/ 
-// /*AFLA*/ /* GCC 4.1.[01] miscompiles __weak */
-// /*AFLA*/ #ifdef __KERNEL__
-// /*AFLA*/ # if GCC_VERSION >= 40100 &&  GCC_VERSION <= 40101
-// /*AFLA*/ #  error Your version of gcc miscompiles the __weak directive
-// /*AFLA*/ # endif
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #define __used			__attribute__((__used__))
-// /*AFLA*/ #define __compiler_offsetof(a, b)					\
-// /*AFLA*/ 	__builtin_offsetof(a, b)
-// /*AFLA*/ 
-// /*AFLA*/ #if GCC_VERSION >= 40100
-// /*AFLA*/ # define __compiletime_object_size(obj) __builtin_object_size(obj, 0)
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #if GCC_VERSION >= 40300
-// /*AFLA*/ /* Mark functions as cold. gcc will assume any path leading to a call
-// /*AFLA*/  * to them will be unlikely.  This means a lot of manual unlikely()s
-// /*AFLA*/  * are unnecessary now for any paths leading to the usual suspects
-// /*AFLA*/  * like BUG(), printk(), panic() etc. [but let's keep them for now for
-// /*AFLA*/  * older compilers]
-// /*AFLA*/  *
-// /*AFLA*/  * Early snapshots of gcc 4.3 don't support this and we can't detect this
-// /*AFLA*/  * in the preprocessor, but we can live with this because they're unreleased.
-// /*AFLA*/  * Maketime probing would be overkill here.
-// /*AFLA*/  *
-// /*AFLA*/  * gcc also has a __attribute__((__hot__)) to move hot functions into
-// /*AFLA*/  * a special section, but I don't see any sense in this right now in
-// /*AFLA*/  * the kernel context
-// /*AFLA*/  */
-// /*AFLA*/ #define __cold			__attribute__((__cold__))
-// /*AFLA*/ 
-// /*AFLA*/ #define __UNIQUE_ID(prefix) __PASTE(__PASTE(__UNIQUE_ID_, prefix), __COUNTER__)
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __CHECKER__
-// /*AFLA*/ # define __compiletime_warning(message) __attribute__((warning(message)))
-// /*AFLA*/ # define __compiletime_error(message) __attribute__((error(message)))
-// /*AFLA*/ #endif /* __CHECKER__ */
-// /*AFLA*/ #endif /* GCC_VERSION >= 40300 */
-// /*AFLA*/ 
-// /*AFLA*/ #if GCC_VERSION >= 40500
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __CHECKER__
-// /*AFLA*/ #ifdef LATENT_ENTROPY_PLUGIN
-// /*AFLA*/ #define __latent_entropy __attribute__((latent_entropy))
-// /*AFLA*/ #endif
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * Mark a position in code as unreachable.  This can be used to
-// /*AFLA*/  * suppress control flow warnings after asm blocks that transfer
-// /*AFLA*/  * control elsewhere.
-// /*AFLA*/  *
-// /*AFLA*/  * Early snapshots of gcc 4.5 don't support this and we can't detect
-// /*AFLA*/  * this in the preprocessor, but we can live with this because they're
-// /*AFLA*/  * unreleased.  Really, we need to have autoconf for the kernel.
-// /*AFLA*/  */
-// /*AFLA*/ #define unreachable() __builtin_unreachable()
-// /*AFLA*/ 
-// /*AFLA*/ /* Mark a function definition as prohibited from being cloned. */
-// /*AFLA*/ #define __noclone	__attribute__((__noclone__, __optimize__("no-tracer")))
-// /*AFLA*/ 
-// /*AFLA*/ #endif /* GCC_VERSION >= 40500 */
-// /*AFLA*/ 
-// /*AFLA*/ #if GCC_VERSION >= 40600
-// /*AFLA*/ /*
-// /*AFLA*/  * When used with Link Time Optimization, gcc can optimize away C functions or
-// /*AFLA*/  * variables which are referenced only from assembly code.  __visible tells the
-// /*AFLA*/  * optimizer that something else uses this function or variable, thus preventing
-// /*AFLA*/  * this.
-// /*AFLA*/  */
-// /*AFLA*/ #define __visible	__attribute__((externally_visible))
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ 
-// /*AFLA*/ #if GCC_VERSION >= 40900 && !defined(__CHECKER__)
-// /*AFLA*/ /*
-// /*AFLA*/  * __assume_aligned(n, k): Tell the optimizer that the returned
-// /*AFLA*/  * pointer can be assumed to be k modulo n. The second argument is
-// /*AFLA*/  * optional (default 0), so we use a variadic macro to make the
-// /*AFLA*/  * shorthand.
-// /*AFLA*/  *
-// /*AFLA*/  * Beware: Do not apply this to functions which may return
-// /*AFLA*/  * ERR_PTRs. Also, it is probably unwise to apply it to functions
-// /*AFLA*/  * returning extra information in the low bits (but in that case the
-// /*AFLA*/  * compiler should see some alignment anyway, when the return value is
-// /*AFLA*/  * massaged by 'flags = ptr & 3; ptr &= ~3;').
-// /*AFLA*/  */
-// /*AFLA*/ #define __assume_aligned(a, ...) __attribute__((__assume_aligned__(a, ## __VA_ARGS__)))
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * GCC 'asm goto' miscompiles certain code sequences:
-// /*AFLA*/  *
-// /*AFLA*/  *   http://gcc.gnu.org/bugzilla/show_bug.cgi?id=58670
-// /*AFLA*/  *
-// /*AFLA*/  * Work it around via a compiler barrier quirk suggested by Jakub Jelinek.
-// /*AFLA*/  *
-// /*AFLA*/  * (asm goto is automatically volatile - the naming reflects this.)
-// /*AFLA*/  */
-// /*AFLA*/ #define asm_volatile_goto(x...)	do { asm goto(x); asm (""); } while (0)
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * sparse (__CHECKER__) pretends to be gcc, but can't do constant
-// /*AFLA*/  * folding in __builtin_bswap*() (yet), so don't set these for it.
-// /*AFLA*/  */
-// /*AFLA*/ #if defined(CONFIG_ARCH_USE_BUILTIN_BSWAP) && !defined(__CHECKER__)
-// /*AFLA*/ #if GCC_VERSION >= 40400
-// /*AFLA*/ #define __HAVE_BUILTIN_BSWAP32__
-// /*AFLA*/ #define __HAVE_BUILTIN_BSWAP64__
-// /*AFLA*/ #endif
-// /*AFLA*/ #if GCC_VERSION >= 40800
-// /*AFLA*/ #define __HAVE_BUILTIN_BSWAP16__
-// /*AFLA*/ #endif
-// /*AFLA*/ #endif /* CONFIG_ARCH_USE_BUILTIN_BSWAP && !__CHECKER__ */
-// /*AFLA*/ 
-// /*AFLA*/ #if GCC_VERSION >= 70000
-// /*AFLA*/ #define KASAN_ABI_VERSION 5
-// /*AFLA*/ #elif GCC_VERSION >= 50000
-// /*AFLA*/ #define KASAN_ABI_VERSION 4
-// /*AFLA*/ #elif GCC_VERSION >= 40902
-// /*AFLA*/ #define KASAN_ABI_VERSION 3
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #if GCC_VERSION >= 40902
-// /*AFLA*/ /*
-// /*AFLA*/  * Tell the compiler that address safety instrumentation (KASAN)
-// /*AFLA*/  * should not be applied to that function.
-// /*AFLA*/  * Conflicts with inlining: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67368
-// /*AFLA*/  */
-// /*AFLA*/ #define __no_sanitize_address __attribute__((no_sanitize_address))
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #endif	/* gcc version >= 40000 specific checks */
-// /*AFLA*/ 
-// /*AFLA*/ #if !defined(__noclone)
-// /*AFLA*/ #define __noclone	/* not needed */
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #if !defined(__no_sanitize_address)
-// /*AFLA*/ #define __no_sanitize_address
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * A trick to suppress uninitialized variable warning without generating any
-// /*AFLA*/  * code
-// /*AFLA*/  */
-// /*AFLA*/ #define uninitialized_var(x) x = x
+#ifdef CONFIG_GCOV_KERNEL
+# if GCC_VERSION < 30400
+#   error "GCOV profiling support for gcc versions below 3.4 not included"
+# endif /* __GNUC_MINOR__ */
+#endif /* CONFIG_GCOV_KERNEL */
+
+#if GCC_VERSION >= 30400
+#define __must_check		__attribute__((warn_unused_result))
+#define __malloc		__attribute__((__malloc__))
+#endif
+
+#if GCC_VERSION >= 40000
+
+/* GCC 4.1.[01] miscompiles __weak */
+#ifdef __KERNEL__
+# if GCC_VERSION >= 40100 &&  GCC_VERSION <= 40101
+#  error Your version of gcc miscompiles the __weak directive
+# endif
+#endif
+
+#define __used			__attribute__((__used__))
+#define __compiler_offsetof(a, b)					\
+	__builtin_offsetof(a, b)
+
+#if GCC_VERSION >= 40100
+# define __compiletime_object_size(obj) __builtin_object_size(obj, 0)
+#endif
+
+#if GCC_VERSION >= 40300
+/* Mark functions as cold. gcc will assume any path leading to a call
+ * to them will be unlikely.  This means a lot of manual unlikely()s
+ * are unnecessary now for any paths leading to the usual suspects
+ * like BUG(), printk(), panic() etc. [but let's keep them for now for
+ * older compilers]
+ *
+ * Early snapshots of gcc 4.3 don't support this and we can't detect this
+ * in the preprocessor, but we can live with this because they're unreleased.
+ * Maketime probing would be overkill here.
+ *
+ * gcc also has a __attribute__((__hot__)) to move hot functions into
+ * a special section, but I don't see any sense in this right now in
+ * the kernel context
+ */
+#define __cold			__attribute__((__cold__))
+
+#define __UNIQUE_ID(prefix) __PASTE(__PASTE(__UNIQUE_ID_, prefix), __COUNTER__)
+
+#ifndef __CHECKER__
+# define __compiletime_warning(message) __attribute__((warning(message)))
+# define __compiletime_error(message) __attribute__((error(message)))
+#endif /* __CHECKER__ */
+#endif /* GCC_VERSION >= 40300 */
+
+#if GCC_VERSION >= 40500
+
+#ifndef __CHECKER__
+#ifdef LATENT_ENTROPY_PLUGIN
+#define __latent_entropy __attribute__((latent_entropy))
+#endif
+#endif
+
+/*
+ * Mark a position in code as unreachable.  This can be used to
+ * suppress control flow warnings after asm blocks that transfer
+ * control elsewhere.
+ *
+ * Early snapshots of gcc 4.5 don't support this and we can't detect
+ * this in the preprocessor, but we can live with this because they're
+ * unreleased.  Really, we need to have autoconf for the kernel.
+ */
+#define unreachable() __builtin_unreachable()
+
+/* Mark a function definition as prohibited from being cloned. */
+#define __noclone	__attribute__((__noclone__, __optimize__("no-tracer")))
+
+#endif /* GCC_VERSION >= 40500 */
+
+#if GCC_VERSION >= 40600
+/*
+ * When used with Link Time Optimization, gcc can optimize away C functions or
+ * variables which are referenced only from assembly code.  __visible tells the
+ * optimizer that something else uses this function or variable, thus preventing
+ * this.
+ */
+#define __visible	__attribute__((externally_visible))
+#endif
+
+
+#if GCC_VERSION >= 40900 && !defined(__CHECKER__)
+/*
+ * __assume_aligned(n, k): Tell the optimizer that the returned
+ * pointer can be assumed to be k modulo n. The second argument is
+ * optional (default 0), so we use a variadic macro to make the
+ * shorthand.
+ *
+ * Beware: Do not apply this to functions which may return
+ * ERR_PTRs. Also, it is probably unwise to apply it to functions
+ * returning extra information in the low bits (but in that case the
+ * compiler should see some alignment anyway, when the return value is
+ * massaged by 'flags = ptr & 3; ptr &= ~3;').
+ */
+#define __assume_aligned(a, ...) __attribute__((__assume_aligned__(a, ## __VA_ARGS__)))
+#endif
+
+/*
+ * GCC 'asm goto' miscompiles certain code sequences:
+ *
+ *   http://gcc.gnu.org/bugzilla/show_bug.cgi?id=58670
+ *
+ * Work it around via a compiler barrier quirk suggested by Jakub Jelinek.
+ *
+ * (asm goto is automatically volatile - the naming reflects this.)
+ */
+#define asm_volatile_goto(x...)	do { asm goto(x); asm (""); } while (0)
+
+/*
+ * sparse (__CHECKER__) pretends to be gcc, but can't do constant
+ * folding in __builtin_bswap*() (yet), so don't set these for it.
+ */
+#if defined(CONFIG_ARCH_USE_BUILTIN_BSWAP) && !defined(__CHECKER__)
+#if GCC_VERSION >= 40400
+#define __HAVE_BUILTIN_BSWAP32__
+#define __HAVE_BUILTIN_BSWAP64__
+#endif
+#if GCC_VERSION >= 40800
+#define __HAVE_BUILTIN_BSWAP16__
+#endif
+#endif /* CONFIG_ARCH_USE_BUILTIN_BSWAP && !__CHECKER__ */
+
+#if GCC_VERSION >= 70000
+#define KASAN_ABI_VERSION 5
+#elif GCC_VERSION >= 50000
+#define KASAN_ABI_VERSION 4
+#elif GCC_VERSION >= 40902
+#define KASAN_ABI_VERSION 3
+#endif
+
+#if GCC_VERSION >= 40902
+/*
+ * Tell the compiler that address safety instrumentation (KASAN)
+ * should not be applied to that function.
+ * Conflicts with inlining: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67368
+ */
+#define __no_sanitize_address __attribute__((no_sanitize_address))
+#endif
+
+#endif	/* gcc version >= 40000 specific checks */
+
+#if !defined(__noclone)
+#define __noclone	/* not needed */
+#endif
+
+#if !defined(__no_sanitize_address)
+#define __no_sanitize_address
+#endif
+
+/*
+ * A trick to suppress uninitialized variable warning without generating any
+ * code
+ */
+#define uninitialized_var(x) x = x
