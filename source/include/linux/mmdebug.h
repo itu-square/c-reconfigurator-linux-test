@@ -1,7 +1,7 @@
-// /*AFLA*/ #ifndef LINUX_MM_DEBUG_H
-// /*AFLA*/ #define LINUX_MM_DEBUG_H 1
-// /*AFLA*/ 
-// /*AFLA*/ #include <linux/bug.h>
+#ifndef LINUX_MM_DEBUG_H
+#define LINUX_MM_DEBUG_H 1
+
+#include <linux/bug.h>
 // /*AFLA*/ #include <linux/stringify.h>
 // /*AFLA*/ 
 // /*AFLA*/ struct page;
@@ -62,5 +62,5 @@
 // /*AFLA*/ #else
 // /*AFLA*/ #define VM_BUG_ON_PGFLAGS(cond, page) BUILD_BUG_ON_INVALID(cond)
 // /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #endif
+
+#endif

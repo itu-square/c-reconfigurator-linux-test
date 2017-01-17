@@ -1,62 +1,62 @@
-// /*AFLA*/ #ifndef __LINUX_COMPILER_H
-// /*AFLA*/ #define __LINUX_COMPILER_H
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __ASSEMBLY__
-// /*AFLA*/ 
-// /*AFLA*/ #ifdef __CHECKER__
-// /*AFLA*/ # define __user		__attribute__((noderef, address_space(1)))
-// /*AFLA*/ # define __kernel	__attribute__((address_space(0)))
-// /*AFLA*/ # define __safe		__attribute__((safe))
-// /*AFLA*/ # define __force	__attribute__((force))
-// /*AFLA*/ # define __nocast	__attribute__((nocast))
-// /*AFLA*/ # define __iomem	__attribute__((noderef, address_space(2)))
-// /*AFLA*/ # define __must_hold(x)	__attribute__((context(x,1,1)))
-// /*AFLA*/ # define __acquires(x)	__attribute__((context(x,0,1)))
-// /*AFLA*/ # define __releases(x)	__attribute__((context(x,1,0)))
-// /*AFLA*/ # define __acquire(x)	__context__(x,1)
-// /*AFLA*/ # define __release(x)	__context__(x,-1)
-// /*AFLA*/ # define __cond_lock(x,c)	((c) ? ({ __acquire(x); 1; }) : 0)
-// /*AFLA*/ # define __percpu	__attribute__((noderef, address_space(3)))
-// /*AFLA*/ #ifdef CONFIG_SPARSE_RCU_POINTER
-// /*AFLA*/ # define __rcu		__attribute__((noderef, address_space(4)))
-// /*AFLA*/ #else /* CONFIG_SPARSE_RCU_POINTER */
-// /*AFLA*/ # define __rcu
-// /*AFLA*/ #endif /* CONFIG_SPARSE_RCU_POINTER */
-// /*AFLA*/ # define __private	__attribute__((noderef))
-// /*AFLA*/ extern void __chk_user_ptr(const volatile void __user *);
-// /*AFLA*/ extern void __chk_io_ptr(const volatile void __iomem *);
-// /*AFLA*/ # define ACCESS_PRIVATE(p, member) (*((typeof((p)->member) __force *) &(p)->member))
-// /*AFLA*/ #else /* __CHECKER__ */
-// /*AFLA*/ # define __user
-// /*AFLA*/ # define __kernel
-// /*AFLA*/ # define __safe
-// /*AFLA*/ # define __force
-// /*AFLA*/ # define __nocast
-// /*AFLA*/ # define __iomem
-// /*AFLA*/ # define __chk_user_ptr(x) (void)0
-// /*AFLA*/ # define __chk_io_ptr(x) (void)0
-// /*AFLA*/ # define __builtin_warning(x, y...) (1)
-// /*AFLA*/ # define __must_hold(x)
-// /*AFLA*/ # define __acquires(x)
-// /*AFLA*/ # define __releases(x)
-// /*AFLA*/ # define __acquire(x) (void)0
-// /*AFLA*/ # define __release(x) (void)0
-// /*AFLA*/ # define __cond_lock(x,c) (c)
-// /*AFLA*/ # define __percpu
-// /*AFLA*/ # define __rcu
-// /*AFLA*/ # define __private
-// /*AFLA*/ # define ACCESS_PRIVATE(p, member) ((p)->member)
-// /*AFLA*/ #endif /* __CHECKER__ */
-// /*AFLA*/ 
-// /*AFLA*/ /* Indirect macros required for expanded argument pasting, eg. __LINE__. */
-// /*AFLA*/ #define ___PASTE(a,b) a##b
-// /*AFLA*/ #define __PASTE(a,b) ___PASTE(a,b)
-// /*AFLA*/ 
-// /*AFLA*/ #ifdef __KERNEL__
-// /*AFLA*/ 
-// /*AFLA*/ #ifdef __GNUC__
-// /*AFLA*/ #include <linux/compiler-gcc.h>
-// /*AFLA*/ #endif
+#ifndef __LINUX_COMPILER_H
+#define __LINUX_COMPILER_H
+
+#ifndef __ASSEMBLY__
+
+#ifdef __CHECKER__
+# define __user		__attribute__((noderef, address_space(1)))
+# define __kernel	__attribute__((address_space(0)))
+# define __safe		__attribute__((safe))
+# define __force	__attribute__((force))
+# define __nocast	__attribute__((nocast))
+# define __iomem	__attribute__((noderef, address_space(2)))
+# define __must_hold(x)	__attribute__((context(x,1,1)))
+# define __acquires(x)	__attribute__((context(x,0,1)))
+# define __releases(x)	__attribute__((context(x,1,0)))
+# define __acquire(x)	__context__(x,1)
+# define __release(x)	__context__(x,-1)
+# define __cond_lock(x,c)	((c) ? ({ __acquire(x); 1; }) : 0)
+# define __percpu	__attribute__((noderef, address_space(3)))
+#ifdef CONFIG_SPARSE_RCU_POINTER
+# define __rcu		__attribute__((noderef, address_space(4)))
+#else /* CONFIG_SPARSE_RCU_POINTER */
+# define __rcu
+#endif /* CONFIG_SPARSE_RCU_POINTER */
+# define __private	__attribute__((noderef))
+extern void __chk_user_ptr(const volatile void __user *);
+extern void __chk_io_ptr(const volatile void __iomem *);
+# define ACCESS_PRIVATE(p, member) (*((typeof((p)->member) __force *) &(p)->member))
+#else /* __CHECKER__ */
+# define __user
+# define __kernel
+# define __safe
+# define __force
+# define __nocast
+# define __iomem
+# define __chk_user_ptr(x) (void)0
+# define __chk_io_ptr(x) (void)0
+# define __builtin_warning(x, y...) (1)
+# define __must_hold(x)
+# define __acquires(x)
+# define __releases(x)
+# define __acquire(x) (void)0
+# define __release(x) (void)0
+# define __cond_lock(x,c) (c)
+# define __percpu
+# define __rcu
+# define __private
+# define ACCESS_PRIVATE(p, member) ((p)->member)
+#endif /* __CHECKER__ */
+
+/* Indirect macros required for expanded argument pasting, eg. __LINE__. */
+#define ___PASTE(a,b) a##b
+#define __PASTE(a,b) ___PASTE(a,b)
+
+#ifdef __KERNEL__
+
+#ifdef __GNUC__
+#include <linux/compiler-gcc.h>
+#endif
 // /*AFLA*/ 
 // /*AFLA*/ #if defined(CC_USING_HOTPATCH) && !defined(__CHECKER__)
 // /*AFLA*/ #define notrace __attribute__((hotpatch(0,0)))
@@ -325,9 +325,9 @@
 // /*AFLA*/ 	__u.__val;					\
 // /*AFLA*/ })
 // /*AFLA*/ 
-// /*AFLA*/ #endif /* __KERNEL__ */
-// /*AFLA*/ 
-// /*AFLA*/ #endif /* __ASSEMBLY__ */
+#endif /* __KERNEL__ */
+
+#endif /* __ASSEMBLY__ */
 // /*AFLA*/ 
 // /*AFLA*/ #ifdef __KERNEL__
 // /*AFLA*/ /*
@@ -574,4 +574,4 @@
 // /*AFLA*/ # define __kprobes
 // /*AFLA*/ # define nokprobe_inline	inline
 // /*AFLA*/ #endif
-// /*AFLA*/ #endif /* __LINUX_COMPILER_H */
+#endif /* __LINUX_COMPILER_H */

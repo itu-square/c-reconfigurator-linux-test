@@ -1,7 +1,7 @@
-// /*AFLA*/ #ifndef _ASM_GENERIC_BUG_H
-// /*AFLA*/ #define _ASM_GENERIC_BUG_H
-// /*AFLA*/ 
-// /*AFLA*/ #include <linux/compiler.h>
+#ifndef _ASM_GENERIC_BUG_H
+#define _ASM_GENERIC_BUG_H
+
+#include <linux/compiler.h>
 // /*AFLA*/ 
 // /*AFLA*/ #ifdef CONFIG_GENERIC_BUG
 // /*AFLA*/ #define BUGFLAG_WARNING		(1 << 0)
@@ -216,5 +216,5 @@
 // /*AFLA*/ #endif
 // /*AFLA*/ 
 // /*AFLA*/ #endif /* __ASSEMBLY__ */
-// /*AFLA*/ 
-// /*AFLA*/ #endif
+
+#endif

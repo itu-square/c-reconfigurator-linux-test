@@ -1,7 +1,7 @@
-// /*AFLA*/ #ifndef __LINUX_GFP_H
-// /*AFLA*/ #define __LINUX_GFP_H
-// /*AFLA*/ 
-// /*AFLA*/ #include <linux/mmdebug.h>
+#ifndef __LINUX_GFP_H
+#define __LINUX_GFP_H
+
+#include <linux/mmdebug.h>
 // /*AFLA*/ #include <linux/mmzone.h>
 // /*AFLA*/ #include <linux/stddef.h>
 // /*AFLA*/ #include <linux/linkage.h>
@@ -555,5 +555,5 @@
 // /*AFLA*/ /* CMA stuff */
 // /*AFLA*/ extern void init_cma_reserved_pageblock(struct page *page);
 // /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #endif /* __LINUX_GFP_H */
+
+#endif /* __LINUX_GFP_H */

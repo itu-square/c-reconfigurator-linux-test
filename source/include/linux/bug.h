@@ -1,7 +1,7 @@
-// /*AFLA*/ #ifndef _LINUX_BUG_H
-// /*AFLA*/ #define _LINUX_BUG_H
-// /*AFLA*/ 
-// /*AFLA*/ #include <asm/bug.h>
+#ifndef _LINUX_BUG_H
+#define _LINUX_BUG_H
+
+#include <asm/bug.h>
 // /*AFLA*/ #include <linux/compiler.h>
 // /*AFLA*/ 
 // /*AFLA*/ enum bug_trap_type {
@@ -121,4 +121,4 @@
 // /*AFLA*/ }
 // /*AFLA*/ 
 // /*AFLA*/ #endif	/* CONFIG_GENERIC_BUG */
-// /*AFLA*/ #endif	/* _LINUX_BUG_H */
+#endif	/* _LINUX_BUG_H */

@@ -1,17 +1,17 @@
-// /*AFLA*/ /*
-// /*AFLA*/  * Written by Mark Hemment, 1996 (markhe@nextd.demon.co.uk).
-// /*AFLA*/  *
-// /*AFLA*/  * (C) SGI 2006, Christoph Lameter
-// /*AFLA*/  * 	Cleaned up and restructured to ease the addition of alternative
-// /*AFLA*/  * 	implementations of SLAB allocators.
-// /*AFLA*/  * (C) Linux Foundation 2008-2013
-// /*AFLA*/  *      Unified interface for all slab allocators
-// /*AFLA*/  */
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef _LINUX_SLAB_H
-// /*AFLA*/ #define	_LINUX_SLAB_H
-// /*AFLA*/ 
-// /*AFLA*/ #include <linux/gfp.h>
+/*
+ * Written by Mark Hemment, 1996 (markhe@nextd.demon.co.uk).
+ *
+ * (C) SGI 2006, Christoph Lameter
+ * 	Cleaned up and restructured to ease the addition of alternative
+ * 	implementations of SLAB allocators.
+ * (C) Linux Foundation 2008-2013
+ *      Unified interface for all slab allocators
+ */
+
+#ifndef _LINUX_SLAB_H
+#define	_LINUX_SLAB_H
+
+#include <linux/gfp.h>
 // /*AFLA*/ #include <linux/types.h>
 // /*AFLA*/ #include <linux/workqueue.h>
 // /*AFLA*/ 
@@ -657,5 +657,5 @@
 // /*AFLA*/ #define slab_prepare_cpu	NULL
 // /*AFLA*/ #define slab_dead_cpu		NULL
 // /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #endif	/* _LINUX_SLAB_H */
+
+#endif	/* _LINUX_SLAB_H */
