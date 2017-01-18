@@ -57,58 +57,58 @@ extern void __chk_io_ptr(const volatile void __iomem *);
 #ifdef __GNUC__
 #include <linux/compiler-gcc.h>
 #endif
-// /*AFLA*/ 
-// /*AFLA*/ #if defined(CC_USING_HOTPATCH) && !defined(__CHECKER__)
-// /*AFLA*/ #define notrace __attribute__((hotpatch(0,0)))
-// /*AFLA*/ #else
-// /*AFLA*/ #define notrace __attribute__((no_instrument_function))
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /* Intel compiler defines __GNUC__. So we will overwrite implementations
-// /*AFLA*/  * coming from above header files here
-// /*AFLA*/  */
-// /*AFLA*/ #ifdef __INTEL_COMPILER
-// /*AFLA*/ # include <linux/compiler-intel.h>
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /* Clang compiler defines __GNUC__. So we will overwrite implementations
-// /*AFLA*/  * coming from above header files here
-// /*AFLA*/  */
-// /*AFLA*/ #ifdef __clang__
-// /*AFLA*/ #include <linux/compiler-clang.h>
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * Generic compiler-dependent macros required for kernel
-// /*AFLA*/  * build go below this comment. Actual compiler/compiler version
-// /*AFLA*/  * specific implementations come from the above header files
-// /*AFLA*/  */
-// /*AFLA*/ 
-// /*AFLA*/ struct ftrace_branch_data {
-// /*AFLA*/ 	const char *func;
-// /*AFLA*/ 	const char *file;
-// /*AFLA*/ 	unsigned line;
-// /*AFLA*/ 	union {
-// /*AFLA*/ 		struct {
-// /*AFLA*/ 			unsigned long correct;
-// /*AFLA*/ 			unsigned long incorrect;
-// /*AFLA*/ 		};
-// /*AFLA*/ 		struct {
-// /*AFLA*/ 			unsigned long miss;
-// /*AFLA*/ 			unsigned long hit;
-// /*AFLA*/ 		};
-// /*AFLA*/ 		unsigned long miss_hit[2];
-// /*AFLA*/ 	};
-// /*AFLA*/ };
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * Note: DISABLE_BRANCH_PROFILING can be used by special lowlevel code
-// /*AFLA*/  * to disable branch tracing on a per file basis.
-// /*AFLA*/  */
-// /*AFLA*/ #if defined(CONFIG_TRACE_BRANCH_PROFILING) \
-// /*AFLA*/     && !defined(DISABLE_BRANCH_PROFILING) && !defined(__CHECKER__)
-// /*AFLA*/ void ftrace_likely_update(struct ftrace_branch_data *f, int val, int expect);
-// /*AFLA*/ 
+
+#if defined(CC_USING_HOTPATCH) && !defined(__CHECKER__)
+#define notrace __attribute__((hotpatch(0,0)))
+#else
+#define notrace __attribute__((no_instrument_function))
+#endif
+
+/* Intel compiler defines __GNUC__. So we will overwrite implementations
+ * coming from above header files here
+ */
+#ifdef __INTEL_COMPILER
+# include <linux/compiler-intel.h>
+#endif
+
+/* Clang compiler defines __GNUC__. So we will overwrite implementations
+ * coming from above header files here
+ */
+#ifdef __clang__
+#include <linux/compiler-clang.h>
+#endif
+
+/*
+ * Generic compiler-dependent macros required for kernel
+ * build go below this comment. Actual compiler/compiler version
+ * specific implementations come from the above header files
+ */
+
+struct ftrace_branch_data {
+	const char *func;
+	const char *file;
+	unsigned line;
+	union {
+		struct {
+			unsigned long correct;
+			unsigned long incorrect;
+		};
+		struct {
+			unsigned long miss;
+			unsigned long hit;
+		};
+		unsigned long miss_hit[2];
+	};
+};
+
+/*
+ * Note: DISABLE_BRANCH_PROFILING can be used by special lowlevel code
+ * to disable branch tracing on a per file basis.
+ */
+#if defined(CONFIG_TRACE_BRANCH_PROFILING) \
+    && !defined(DISABLE_BRANCH_PROFILING) && !defined(__CHECKER__)
+void ftrace_likely_update(struct ftrace_branch_data *f, int val, int expect);
+
 // /*AFLA*/ #define likely_notrace(x)	__builtin_expect(!!(x), 1)
 // /*AFLA*/ #define unlikely_notrace(x)	__builtin_expect(!!(x), 0)
 // /*AFLA*/ 
@@ -166,7 +166,7 @@ extern void __chk_io_ptr(const volatile void __iomem *);
 // /*AFLA*/ #else
 // /*AFLA*/ # define likely(x)	__builtin_expect(!!(x), 1)
 // /*AFLA*/ # define unlikely(x)	__builtin_expect(!!(x), 0)
-// /*AFLA*/ #endif
+#endif
 // /*AFLA*/ 
 // /*AFLA*/ /* Optimization barrier */
 // /*AFLA*/ #ifndef barrier
