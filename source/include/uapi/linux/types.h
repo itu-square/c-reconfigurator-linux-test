@@ -1,7 +1,7 @@
-// /*AFLA*/ #ifndef _UAPI_LINUX_TYPES_H
-// /*AFLA*/ #define _UAPI_LINUX_TYPES_H
-// /*AFLA*/ 
-// /*AFLA*/ #include <asm/types.h>
+#ifndef _UAPI_LINUX_TYPES_H
+#define _UAPI_LINUX_TYPES_H
+
+#include <asm/types.h>
 // /*AFLA*/ 
 // /*AFLA*/ #ifndef __ASSEMBLY__
 // /*AFLA*/ #ifndef	__KERNEL__
@@ -53,4 +53,4 @@
 // /*AFLA*/ #define __aligned_le64 __le64 __attribute__((aligned(8)))
 // /*AFLA*/ 
 // /*AFLA*/ #endif /*  __ASSEMBLY__ */
-// /*AFLA*/ #endif /* _UAPI_LINUX_TYPES_H */
+#endif /* _UAPI_LINUX_TYPES_H */

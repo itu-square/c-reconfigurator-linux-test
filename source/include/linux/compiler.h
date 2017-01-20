@@ -109,119 +109,119 @@ struct ftrace_branch_data {
     && !defined(DISABLE_BRANCH_PROFILING) && !defined(__CHECKER__)
 void ftrace_likely_update(struct ftrace_branch_data *f, int val, int expect);
 
-// /*AFLA*/ #define likely_notrace(x)	__builtin_expect(!!(x), 1)
-// /*AFLA*/ #define unlikely_notrace(x)	__builtin_expect(!!(x), 0)
-// /*AFLA*/ 
-// /*AFLA*/ #define __branch_check__(x, expect) ({					\
-// /*AFLA*/ 			int ______r;					\
-// /*AFLA*/ 			static struct ftrace_branch_data		\
-// /*AFLA*/ 				__attribute__((__aligned__(4)))		\
-// /*AFLA*/ 				__attribute__((section("_ftrace_annotated_branch"))) \
-// /*AFLA*/ 				______f = {				\
-// /*AFLA*/ 				.func = __func__,			\
-// /*AFLA*/ 				.file = __FILE__,			\
-// /*AFLA*/ 				.line = __LINE__,			\
-// /*AFLA*/ 			};						\
-// /*AFLA*/ 			______r = likely_notrace(x);			\
-// /*AFLA*/ 			ftrace_likely_update(&______f, ______r, expect); \
-// /*AFLA*/ 			______r;					\
-// /*AFLA*/ 		})
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * Using __builtin_constant_p(x) to ignore cases where the return
-// /*AFLA*/  * value is always the same.  This idea is taken from a similar patch
-// /*AFLA*/  * written by Daniel Walker.
-// /*AFLA*/  */
-// /*AFLA*/ # ifndef likely
-// /*AFLA*/ #  define likely(x)	(__builtin_constant_p(x) ? !!(x) : __branch_check__(x, 1))
-// /*AFLA*/ # endif
-// /*AFLA*/ # ifndef unlikely
-// /*AFLA*/ #  define unlikely(x)	(__builtin_constant_p(x) ? !!(x) : __branch_check__(x, 0))
-// /*AFLA*/ # endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifdef CONFIG_PROFILE_ALL_BRANCHES
-// /*AFLA*/ /*
-// /*AFLA*/  * "Define 'is'", Bill Clinton
-// /*AFLA*/  * "Define 'if'", Steven Rostedt
-// /*AFLA*/  */
-// /*AFLA*/ #define if(cond, ...) __trace_if( (cond , ## __VA_ARGS__) )
-// /*AFLA*/ #define __trace_if(cond) \
-// /*AFLA*/ 	if (__builtin_constant_p(!!(cond)) ? !!(cond) :			\
-// /*AFLA*/ 	({								\
-// /*AFLA*/ 		int ______r;						\
-// /*AFLA*/ 		static struct ftrace_branch_data			\
-// /*AFLA*/ 			__attribute__((__aligned__(4)))			\
-// /*AFLA*/ 			__attribute__((section("_ftrace_branch")))	\
-// /*AFLA*/ 			______f = {					\
-// /*AFLA*/ 				.func = __func__,			\
-// /*AFLA*/ 				.file = __FILE__,			\
-// /*AFLA*/ 				.line = __LINE__,			\
-// /*AFLA*/ 			};						\
-// /*AFLA*/ 		______r = !!(cond);					\
-// /*AFLA*/ 		______f.miss_hit[______r]++;					\
-// /*AFLA*/ 		______r;						\
-// /*AFLA*/ 	}))
-// /*AFLA*/ #endif /* CONFIG_PROFILE_ALL_BRANCHES */
-// /*AFLA*/ 
-// /*AFLA*/ #else
-// /*AFLA*/ # define likely(x)	__builtin_expect(!!(x), 1)
-// /*AFLA*/ # define unlikely(x)	__builtin_expect(!!(x), 0)
+#define likely_notrace(x)	__builtin_expect(!!(x), 1)
+#define unlikely_notrace(x)	__builtin_expect(!!(x), 0)
+
+#define __branch_check__(x, expect) ({					\
+			int ______r;					\
+			static struct ftrace_branch_data		\
+				__attribute__((__aligned__(4)))		\
+				__attribute__((section("_ftrace_annotated_branch"))) \
+				______f = {				\
+				.func = __func__,			\
+				.file = __FILE__,			\
+				.line = __LINE__,			\
+			};						\
+			______r = likely_notrace(x);			\
+			ftrace_likely_update(&______f, ______r, expect); \
+			______r;					\
+		})
+
+/*
+ * Using __builtin_constant_p(x) to ignore cases where the return
+ * value is always the same.  This idea is taken from a similar patch
+ * written by Daniel Walker.
+ */
+# ifndef likely
+#  define likely(x)	(__builtin_constant_p(x) ? !!(x) : __branch_check__(x, 1))
+# endif
+# ifndef unlikely
+#  define unlikely(x)	(__builtin_constant_p(x) ? !!(x) : __branch_check__(x, 0))
+# endif
+
+#ifdef CONFIG_PROFILE_ALL_BRANCHES
+/*
+ * "Define 'is'", Bill Clinton
+ * "Define 'if'", Steven Rostedt
+ */
+#define if(cond, ...) __trace_if( (cond , ## __VA_ARGS__) )
+#define __trace_if(cond) \
+	if (__builtin_constant_p(!!(cond)) ? !!(cond) :			\
+	({								\
+		int ______r;						\
+		static struct ftrace_branch_data			\
+			__attribute__((__aligned__(4)))			\
+			__attribute__((section("_ftrace_branch")))	\
+			______f = {					\
+				.func = __func__,			\
+				.file = __FILE__,			\
+				.line = __LINE__,			\
+			};						\
+		______r = !!(cond);					\
+		______f.miss_hit[______r]++;					\
+		______r;						\
+	}))
+#endif /* CONFIG_PROFILE_ALL_BRANCHES */
+
+#else
+# define likely(x)	__builtin_expect(!!(x), 1)
+# define unlikely(x)	__builtin_expect(!!(x), 0)
 #endif
-// /*AFLA*/ 
-// /*AFLA*/ /* Optimization barrier */
-// /*AFLA*/ #ifndef barrier
-// /*AFLA*/ # define barrier() __memory_barrier()
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef barrier_data
-// /*AFLA*/ # define barrier_data(ptr) barrier()
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /* Unreachable code */
-// /*AFLA*/ #ifndef unreachable
-// /*AFLA*/ # define unreachable() do { } while (1)
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * KENTRY - kernel entry point
-// /*AFLA*/  * This can be used to annotate symbols (functions or data) that are used
-// /*AFLA*/  * without their linker symbol being referenced explicitly. For example,
-// /*AFLA*/  * interrupt vector handlers, or functions in the kernel image that are found
-// /*AFLA*/  * programatically.
-// /*AFLA*/  *
-// /*AFLA*/  * Not required for symbols exported with EXPORT_SYMBOL, or initcalls. Those
-// /*AFLA*/  * are handled in their own way (with KEEP() in linker scripts).
-// /*AFLA*/  *
-// /*AFLA*/  * KENTRY can be avoided if the symbols in question are marked as KEEP() in the
-// /*AFLA*/  * linker script. For example an architecture could KEEP() its entire
-// /*AFLA*/  * boot/exception vector code rather than annotate each function and data.
-// /*AFLA*/  */
-// /*AFLA*/ #ifndef KENTRY
-// /*AFLA*/ # define KENTRY(sym)						\
-// /*AFLA*/ 	extern typeof(sym) sym;					\
-// /*AFLA*/ 	static const unsigned long __kentry_##sym		\
-// /*AFLA*/ 	__used							\
-// /*AFLA*/ 	__attribute__((section("___kentry" "+" #sym ), used))	\
-// /*AFLA*/ 	= (unsigned long)&sym;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef RELOC_HIDE
-// /*AFLA*/ # define RELOC_HIDE(ptr, off)					\
-// /*AFLA*/   ({ unsigned long __ptr;					\
-// /*AFLA*/      __ptr = (unsigned long) (ptr);				\
-// /*AFLA*/     (typeof(ptr)) (__ptr + (off)); })
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef OPTIMIZER_HIDE_VAR
-// /*AFLA*/ #define OPTIMIZER_HIDE_VAR(var) barrier()
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /* Not-quite-unique ID. */
-// /*AFLA*/ #ifndef __UNIQUE_ID
-// /*AFLA*/ # define __UNIQUE_ID(prefix) __PASTE(__PASTE(__UNIQUE_ID_, prefix), __LINE__)
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #include <uapi/linux/types.h>
+
+/* Optimization barrier */
+#ifndef barrier
+# define barrier() __memory_barrier()
+#endif
+
+#ifndef barrier_data
+# define barrier_data(ptr) barrier()
+#endif
+
+/* Unreachable code */
+#ifndef unreachable
+# define unreachable() do { } while (1)
+#endif
+
+/*
+ * KENTRY - kernel entry point
+ * This can be used to annotate symbols (functions or data) that are used
+ * without their linker symbol being referenced explicitly. For example,
+ * interrupt vector handlers, or functions in the kernel image that are found
+ * programatically.
+ *
+ * Not required for symbols exported with EXPORT_SYMBOL, or initcalls. Those
+ * are handled in their own way (with KEEP() in linker scripts).
+ *
+ * KENTRY can be avoided if the symbols in question are marked as KEEP() in the
+ * linker script. For example an architecture could KEEP() its entire
+ * boot/exception vector code rather than annotate each function and data.
+ */
+#ifndef KENTRY
+# define KENTRY(sym)						\
+	extern typeof(sym) sym;					\
+	static const unsigned long __kentry_##sym		\
+	__used							\
+	__attribute__((section("___kentry" "+" #sym ), used))	\
+	= (unsigned long)&sym;
+#endif
+
+#ifndef RELOC_HIDE
+# define RELOC_HIDE(ptr, off)					\
+  ({ unsigned long __ptr;					\
+     __ptr = (unsigned long) (ptr);				\
+    (typeof(ptr)) (__ptr + (off)); })
+#endif
+
+#ifndef OPTIMIZER_HIDE_VAR
+#define OPTIMIZER_HIDE_VAR(var) barrier()
+#endif
+
+/* Not-quite-unique ID. */
+#ifndef __UNIQUE_ID
+# define __UNIQUE_ID(prefix) __PASTE(__PASTE(__UNIQUE_ID_, prefix), __LINE__)
+#endif
+
+#include <uapi/linux/types.h>
 // /*AFLA*/ 
 // /*AFLA*/ #define __READ_ONCE_SIZE						\
 // /*AFLA*/ ({									\

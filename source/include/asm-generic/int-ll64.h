@@ -1,13 +1,13 @@
-// /*AFLA*/ /*
-// /*AFLA*/  * asm-generic/int-ll64.h
-// /*AFLA*/  *
-// /*AFLA*/  * Integer declarations for architectures which use "long long"
-// /*AFLA*/  * for 64-bit types.
-// /*AFLA*/  */
-// /*AFLA*/ #ifndef _ASM_GENERIC_INT_LL64_H
-// /*AFLA*/ #define _ASM_GENERIC_INT_LL64_H
-// /*AFLA*/ 
-// /*AFLA*/ #include <uapi/asm-generic/int-ll64.h>
+/*
+ * asm-generic/int-ll64.h
+ *
+ * Integer declarations for architectures which use "long long"
+ * for 64-bit types.
+ */
+#ifndef _ASM_GENERIC_INT_LL64_H
+#define _ASM_GENERIC_INT_LL64_H
+
+#include <uapi/asm-generic/int-ll64.h>
 // /*AFLA*/ 
 // /*AFLA*/ 
 // /*AFLA*/ #ifndef __ASSEMBLY__
@@ -46,4 +46,4 @@
 // /*AFLA*/ 
 // /*AFLA*/ #endif /* __ASSEMBLY__ */
 // /*AFLA*/ 
-// /*AFLA*/ #endif /* _ASM_GENERIC_INT_LL64_H */
+#endif /* _ASM_GENERIC_INT_LL64_H */
