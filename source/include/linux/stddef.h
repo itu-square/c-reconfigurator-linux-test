@@ -1,15 +1,15 @@
-// /*AFLA*/ #ifndef _LINUX_STDDEF_H
-// /*AFLA*/ #define _LINUX_STDDEF_H
-// /*AFLA*/ 
-// /*AFLA*/ #include <uapi/linux/stddef.h>
-// /*AFLA*/ 
-// /*AFLA*/ #undef NULL
-// /*AFLA*/ #define NULL ((void *)0)
-// /*AFLA*/ 
-// /*AFLA*/ enum {
-// /*AFLA*/ 	false	= 0,
-// /*AFLA*/ 	true	= 1
-// /*AFLA*/ };
+#ifndef _LINUX_STDDEF_H
+#define _LINUX_STDDEF_H
+
+#include <uapi/linux/stddef.h>
+
+#undef NULL
+#define NULL ((void *)0)
+
+enum {
+	false	= 0,
+	true	= 1
+};
 // /*AFLA*/ 
 // /*AFLA*/ #undef offsetof
 // /*AFLA*/ #ifdef __compiler_offsetof
@@ -27,4 +27,4 @@
 // /*AFLA*/ #define offsetofend(TYPE, MEMBER) \
 // /*AFLA*/ 	(offsetof(TYPE, MEMBER)	+ sizeof(((TYPE *)0)->MEMBER))
 // /*AFLA*/ 
-// /*AFLA*/ #endif
+#endif

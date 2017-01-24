@@ -1,7 +1,7 @@
-// /*AFLA*/ #ifndef _LINUX_POSIX_TYPES_H
-// /*AFLA*/ #define _LINUX_POSIX_TYPES_H
-// /*AFLA*/ 
-// /*AFLA*/ #include <linux/stddef.h>
+#ifndef _LINUX_POSIX_TYPES_H
+#define _LINUX_POSIX_TYPES_H
+
+#include <linux/stddef.h>
 // /*AFLA*/ 
 // /*AFLA*/ /*
 // /*AFLA*/  * This allows for 1024 file descriptors: if NR_OPEN is ever grown
@@ -34,4 +34,4 @@
 // /*AFLA*/ 
 // /*AFLA*/ #include <asm/posix_types.h>
 // /*AFLA*/ 
-// /*AFLA*/ #endif /* _LINUX_POSIX_TYPES_H */
+#endif /* _LINUX_POSIX_TYPES_H */

@@ -544,6 +544,25 @@
       |  |  |- InitializerOpt
       |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
       |- Declaration
+      |  |- SUETypeSpecifier
+      |  |  |- EnumSpecifier
+      |  |     |- xtc.lang.cpp.Syntax.Language<ENUM>enum  
+      |  |     |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |     |- EnumeratorList
+      |  |     |  |- Enumerator
+      |  |     |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>false_V1  
+      |  |     |  |  |- EnumeratorValueOpt
+      |  |     |  |     |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |     |  |     |- xtc.lang.cpp.Syntax.Text<OCTALconstant>0  
+      |  |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |     |  |- Enumerator
+      |  |     |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>true_V1  
+      |  |     |     |- EnumeratorValueOpt
+      |  |     |        |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |     |        |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>1  
+      |  |     |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
          |- DeclaringList
          |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
          |  |- ArrayDeclarator

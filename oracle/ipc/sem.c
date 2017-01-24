@@ -87,4 +87,10 @@ typedef signed long long s64_V1;
 // !defined(__ASSEMBLY__) && defined(__KERNEL__)
 typedef unsigned long long u64_V1;
 
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+enum
+{
+    false_V1 = 0 , true_V1 = 1}
+;
+
 // END #include <linux/slab.h>

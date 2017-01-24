@@ -2,15 +2,15 @@
 #define _UAPI_LINUX_TYPES_H
 
 #include <asm/types.h>
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __ASSEMBLY__
-// /*AFLA*/ #ifndef	__KERNEL__
-// /*AFLA*/ #ifndef __EXPORTED_HEADERS__
-// /*AFLA*/ #warning "Attempt to use kernel headers from user space, see http://kernelnewbies.org/KernelHeaders"
-// /*AFLA*/ #endif /* __EXPORTED_HEADERS__ */
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #include <linux/posix_types.h>
+
+#ifndef __ASSEMBLY__
+#ifndef	__KERNEL__
+#ifndef __EXPORTED_HEADERS__
+#warning "Attempt to use kernel headers from user space, see http://kernelnewbies.org/KernelHeaders"
+#endif /* __EXPORTED_HEADERS__ */
+#endif
+
+#include <linux/posix_types.h>
 // /*AFLA*/ 
 // /*AFLA*/ 
 // /*AFLA*/ /*
@@ -52,5 +52,5 @@
 // /*AFLA*/ #define __aligned_be64 __be64 __attribute__((aligned(8)))
 // /*AFLA*/ #define __aligned_le64 __le64 __attribute__((aligned(8)))
 // /*AFLA*/ 
-// /*AFLA*/ #endif /*  __ASSEMBLY__ */
+#endif /*  __ASSEMBLY__ */
 #endif /* _UAPI_LINUX_TYPES_H */
