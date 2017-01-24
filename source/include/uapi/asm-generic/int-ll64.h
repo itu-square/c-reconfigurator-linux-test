@@ -17,22 +17,22 @@
  */
 
 typedef __signed__ char __s8;
-// /*AFLA*/ typedef unsigned char __u8;
-// /*AFLA*/ 
-// /*AFLA*/ typedef __signed__ short __s16;
-// /*AFLA*/ typedef unsigned short __u16;
-// /*AFLA*/ 
-// /*AFLA*/ typedef __signed__ int __s32;
-// /*AFLA*/ typedef unsigned int __u32;
-// /*AFLA*/ 
-// /*AFLA*/ #ifdef __GNUC__
-// /*AFLA*/ __extension__ typedef __signed__ long long __s64;
-// /*AFLA*/ __extension__ typedef unsigned long long __u64;
-// /*AFLA*/ #else
-// /*AFLA*/ typedef __signed__ long long __s64;
-// /*AFLA*/ typedef unsigned long long __u64;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
+typedef unsigned char __u8;
+
+typedef __signed__ short __s16;
+typedef unsigned short __u16;
+
+typedef __signed__ int __s32;
+typedef unsigned int __u32;
+
+#ifdef __GNUC__
+__extension__ typedef __signed__ long long __s64;
+__extension__ typedef unsigned long long __u64;
+#else
+typedef __signed__ long long __s64;
+typedef unsigned long long __u64;
+#endif
+
 #endif /* __ASSEMBLY__ */
 
 
