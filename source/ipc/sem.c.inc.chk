@@ -9,8 +9,8 @@
 [    ]........ ./include/uapi/linux/types.h
 [DONE]......... ./arch/x86/include/uapi/asm/types.h
 [DONE].......... ./include/uapi/asm-generic/types.h
-[    ]........... ./include/asm-generic/int-ll64.h
-[    ]............ ./include/uapi/asm-generic/int-ll64.h
+[DONE]........... ./include/asm-generic/int-ll64.h
+[DONE]............ ./include/uapi/asm-generic/int-ll64.h
 [DONE]............. ./arch/x86/include/uapi/asm/bitsperlong.h
 [DONE].............. ./include/asm-generic/bitsperlong.h
 [DONE]............... ./include/uapi/asm-generic/bitsperlong.h

@@ -424,6 +424,126 @@
       |     |  |- InitializerOpt
       |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
       |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<TYPEDEF>typedef  
+      |  |  |  |  |- SignedKeyword
+      |  |  |  |     |- xtc.lang.cpp.Syntax.Language<SIGNED>signed  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |- SimpleDeclarator
+      |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>s8_V1  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<TYPEDEF>typedef  
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |- SimpleDeclarator
+      |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>u8_V1  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<TYPEDEF>typedef  
+      |  |  |  |  |- SignedKeyword
+      |  |  |  |     |- xtc.lang.cpp.Syntax.Language<SIGNED>signed  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<SHORT>short  
+      |  |  |- SimpleDeclarator
+      |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>s16_V1  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<TYPEDEF>typedef  
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<SHORT>short  
+      |  |  |- SimpleDeclarator
+      |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>u16_V1  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<TYPEDEF>typedef  
+      |  |  |  |  |- SignedKeyword
+      |  |  |  |     |- xtc.lang.cpp.Syntax.Language<SIGNED>signed  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |  |- SimpleDeclarator
+      |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>s32_V1  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<TYPEDEF>typedef  
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |  |- SimpleDeclarator
+      |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>u32_V1  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<TYPEDEF>typedef  
+      |  |  |  |  |  |- SignedKeyword
+      |  |  |  |  |     |- xtc.lang.cpp.Syntax.Language<SIGNED>signed  
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LONG>long  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<LONG>long  
+      |  |  |- SimpleDeclarator
+      |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>s64_V1  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |- BasicDeclarationSpecifier
+      |  |  |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<TYPEDEF>typedef  
+      |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LONG>long  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<LONG>long  
+      |  |  |- SimpleDeclarator
+      |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>u64_V1  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
          |- DeclaringList
          |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
          |  |- ArrayDeclarator

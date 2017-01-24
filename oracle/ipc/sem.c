@@ -63,4 +63,28 @@ __extension__
 __extension__
  typedef unsigned long long __u64_V1;
 
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef signed char s8_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef unsigned char u8_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef signed short s16_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef unsigned short u16_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef signed int s32_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef unsigned int u32_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef signed long long s64_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef unsigned long long u64_V1;
+
 // END #include <linux/slab.h>
