@@ -103,4 +103,61 @@ __kernel_fd_set_V1;
 // !defined(__ASSEMBLY__) && defined(__KERNEL__)
 typedef void (* __kernel_sighandler_t_V1) (int);
 
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef int __kernel_key_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef int __kernel_mqd_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef unsigned short __kernel_old_uid_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef unsigned short __kernel_old_gid_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef unsigned long __kernel_old_dev_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_long_t)
+typedef long __kernel_long_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_long_t)
+typedef unsigned long __kernel_ulong_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_long_t) && !defined(__kernel_ino_t)
+typedef __kernel_ulong_t_V1 __kernel_ino_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(__kernel_long_t) && !defined(__kernel_ino_t)
+typedef __kernel_ulong_t __kernel_ino_t_V2;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_mode_t)
+typedef unsigned int __kernel_mode_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_pid_t)
+typedef int __kernel_pid_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_ipc_pid_t)
+typedef int __kernel_ipc_pid_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_uid_t)
+typedef unsigned int __kernel_uid_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_uid_t)
+typedef unsigned int __kernel_gid_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_long_t) && !defined(__kernel_suseconds_t)
+typedef __kernel_long_t_V1 __kernel_suseconds_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(__kernel_long_t) && !defined(__kernel_suseconds_t)
+typedef __kernel_long_t __kernel_suseconds_t_V2;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_daddr_t)
+typedef int __kernel_daddr_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_uid32_t)
+typedef unsigned int __kernel_uid32_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_uid32_t)
+typedef unsigned int __kernel_gid32_t_V1;
+
 // END #include <linux/slab.h>

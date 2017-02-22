@@ -1,59 +1,59 @@
-// /*AFLA*/ #ifndef __ASM_GENERIC_POSIX_TYPES_H
-// /*AFLA*/ #define __ASM_GENERIC_POSIX_TYPES_H
-// /*AFLA*/ 
-// /*AFLA*/ #include <asm/bitsperlong.h>
-// /*AFLA*/ /*
-// /*AFLA*/  * This file is generally used by user-level software, so you need to
-// /*AFLA*/  * be a little careful about namespace pollution etc.
-// /*AFLA*/  *
-// /*AFLA*/  * First the types that are often defined in different ways across
-// /*AFLA*/  * architectures, so that you can override them.
-// /*AFLA*/  */
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_long_t
-// /*AFLA*/ typedef long		__kernel_long_t;
-// /*AFLA*/ typedef unsigned long	__kernel_ulong_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_ino_t
-// /*AFLA*/ typedef __kernel_ulong_t __kernel_ino_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_mode_t
-// /*AFLA*/ typedef unsigned int	__kernel_mode_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_pid_t
-// /*AFLA*/ typedef int		__kernel_pid_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_ipc_pid_t
-// /*AFLA*/ typedef int		__kernel_ipc_pid_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_uid_t
-// /*AFLA*/ typedef unsigned int	__kernel_uid_t;
-// /*AFLA*/ typedef unsigned int	__kernel_gid_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_suseconds_t
-// /*AFLA*/ typedef __kernel_long_t		__kernel_suseconds_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_daddr_t
-// /*AFLA*/ typedef int		__kernel_daddr_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_uid32_t
-// /*AFLA*/ typedef unsigned int	__kernel_uid32_t;
-// /*AFLA*/ typedef unsigned int	__kernel_gid32_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_old_uid_t
-// /*AFLA*/ typedef __kernel_uid_t	__kernel_old_uid_t;
-// /*AFLA*/ typedef __kernel_gid_t	__kernel_old_gid_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
+#ifndef __ASM_GENERIC_POSIX_TYPES_H
+#define __ASM_GENERIC_POSIX_TYPES_H
+
+#include <asm/bitsperlong.h>
+/*
+ * This file is generally used by user-level software, so you need to
+ * be a little careful about namespace pollution etc.
+ *
+ * First the types that are often defined in different ways across
+ * architectures, so that you can override them.
+ */
+
+#ifndef __kernel_long_t
+typedef long		__kernel_long_t;
+typedef unsigned long	__kernel_ulong_t;
+#endif
+
+#ifndef __kernel_ino_t
+typedef __kernel_ulong_t __kernel_ino_t;
+#endif
+
+#ifndef __kernel_mode_t
+typedef unsigned int	__kernel_mode_t;
+#endif
+
+#ifndef __kernel_pid_t
+typedef int		__kernel_pid_t;
+#endif
+
+#ifndef __kernel_ipc_pid_t
+typedef int		__kernel_ipc_pid_t;
+#endif
+
+#ifndef __kernel_uid_t
+typedef unsigned int	__kernel_uid_t;
+typedef unsigned int	__kernel_gid_t;
+#endif
+
+#ifndef __kernel_suseconds_t
+typedef __kernel_long_t		__kernel_suseconds_t;
+#endif
+
+#ifndef __kernel_daddr_t
+typedef int		__kernel_daddr_t;
+#endif
+
+#ifndef __kernel_uid32_t
+typedef unsigned int	__kernel_uid32_t;
+typedef unsigned int	__kernel_gid32_t;
+#endif
+
+#ifndef __kernel_old_uid_t
+typedef __kernel_uid_t	__kernel_old_uid_t;
+typedef __kernel_gid_t	__kernel_old_gid_t;
+#endif
+
 // /*AFLA*/ #ifndef __kernel_old_dev_t
 // /*AFLA*/ typedef unsigned int	__kernel_old_dev_t;
 // /*AFLA*/ #endif
@@ -93,4 +93,4 @@
 // /*AFLA*/ typedef unsigned short	__kernel_uid16_t;
 // /*AFLA*/ typedef unsigned short	__kernel_gid16_t;
 // /*AFLA*/ 
-// /*AFLA*/ #endif /* __ASM_GENERIC_POSIX_TYPES_H */
+#endif /* __ASM_GENERIC_POSIX_TYPES_H */

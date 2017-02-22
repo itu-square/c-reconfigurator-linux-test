@@ -1,5 +1,5 @@
-// /*AFLA*/ # ifdef CONFIG_X86_32
-// /*AFLA*/ #  include <asm/posix_types_32.h>
-// /*AFLA*/ # else
-// /*AFLA*/ #  include <asm/posix_types_64.h>
-// /*AFLA*/ # endif
+# ifdef CONFIG_X86_32
+#  include <asm/posix_types_32.h>
+# else
+#  include <asm/posix_types_64.h>
+# endif

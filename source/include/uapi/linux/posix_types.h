@@ -28,10 +28,10 @@ typedef struct {
 /* Type of a signal handler.  */
 typedef void (*__kernel_sighandler_t)(int);
 
-// /*AFLA*/ /* Type of a SYSV IPC key.  */
-// /*AFLA*/ typedef int __kernel_key_t;
-// /*AFLA*/ typedef int __kernel_mqd_t;
-// /*AFLA*/ 
-// /*AFLA*/ #include <asm/posix_types.h>
-// /*AFLA*/ 
+/* Type of a SYSV IPC key.  */
+typedef int __kernel_key_t;
+typedef int __kernel_mqd_t;
+
+#include <asm/posix_types.h>
+
 #endif /* _LINUX_POSIX_TYPES_H */
