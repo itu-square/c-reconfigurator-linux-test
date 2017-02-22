@@ -3,10 +3,10 @@
 // BEGIN #include <linux/slab.h>
 
 // !defined(__ASSEMBLY__) && defined(__CHECKER__)
-extern void __chk_user_ptr_V0 (const volatile void __attribute__ ((noderef , address_space (1)))*);
+extern void __chk_user_ptr_V1 (const volatile void __attribute__ ((noderef , address_space (1)))*);
 
 // !defined(__ASSEMBLY__) && defined(__CHECKER__)
-extern void __chk_io_ptr_V0 (const volatile void __attribute__ ((noderef , address_space (2)))*);
+extern void __chk_io_ptr_V1 (const volatile void __attribute__ ((noderef , address_space (2)))*);
 
 // !defined(__ASSEMBLY__) && defined(__KERNEL__)
 struct ftrace_branch_data_V1
@@ -35,7 +35,7 @@ struct ftrace_branch_data_V1
 ;
 
 // !defined(__ASSEMBLY__) && !defined(__CHECKER__) && defined(__KERNEL__) && defined(CONFIG_TRACE_BRANCH_PROFILING) && !defined(DISABLE_BRANCH_PROFILING)
-void ftrace_likely_update_V2 (struct ftrace_branch_data_V1* f , int val , int expect);
+void ftrace_likely_update_V1 (struct ftrace_branch_data_V1* f , int val , int expect);
 
 // !defined(__ASSEMBLY__) && defined(__KERNEL__)
 typedef __signed__ char __s8_V1;

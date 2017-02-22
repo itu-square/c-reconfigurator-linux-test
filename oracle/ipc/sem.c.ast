@@ -25,7 +25,7 @@
       |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
       |  |  |- FunctionDeclarator
       |  |  |  |- SimpleDeclarator
-      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__chk_user_ptr_V0  
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__chk_user_ptr_V1  
       |  |  |  |- PostfixingFunctionDeclarator
       |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
       |  |  |     |- ParameterTypeListOpt
@@ -79,7 +79,7 @@
       |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
       |  |  |- FunctionDeclarator
       |  |  |  |- SimpleDeclarator
-      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__chk_io_ptr_V0  
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__chk_io_ptr_V1  
       |  |  |  |- PostfixingFunctionDeclarator
       |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
       |  |  |     |- ParameterTypeListOpt
@@ -265,7 +265,7 @@
       |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
       |  |  |- FunctionDeclarator
       |  |  |  |- SimpleDeclarator
-      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>ftrace_likely_update_V2  
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>ftrace_likely_update_V1  
       |  |  |  |- PostfixingFunctionDeclarator
       |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
       |  |  |     |- ParameterTypeListOpt
