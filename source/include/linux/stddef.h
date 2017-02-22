@@ -10,21 +10,21 @@ enum {
 	false	= 0,
 	true	= 1
 };
-// /*AFLA*/ 
-// /*AFLA*/ #undef offsetof
-// /*AFLA*/ #ifdef __compiler_offsetof
-// /*AFLA*/ #define offsetof(TYPE, MEMBER)	__compiler_offsetof(TYPE, MEMBER)
-// /*AFLA*/ #else
-// /*AFLA*/ #define offsetof(TYPE, MEMBER)	((size_t)&((TYPE *)0)->MEMBER)
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /**
-// /*AFLA*/  * offsetofend(TYPE, MEMBER)
-// /*AFLA*/  *
-// /*AFLA*/  * @TYPE: The type of the structure
-// /*AFLA*/  * @MEMBER: The member within the structure to get the end offset of
-// /*AFLA*/  */
-// /*AFLA*/ #define offsetofend(TYPE, MEMBER) \
-// /*AFLA*/ 	(offsetof(TYPE, MEMBER)	+ sizeof(((TYPE *)0)->MEMBER))
-// /*AFLA*/ 
+
+#undef offsetof
+#ifdef __compiler_offsetof
+#define offsetof(TYPE, MEMBER)	__compiler_offsetof(TYPE, MEMBER)
+#else
+#define offsetof(TYPE, MEMBER)	((size_t)&((TYPE *)0)->MEMBER)
+#endif
+
+/**
+ * offsetofend(TYPE, MEMBER)
+ *
+ * @TYPE: The type of the structure
+ * @MEMBER: The member within the structure to get the end offset of
+ */
+#define offsetofend(TYPE, MEMBER) \
+	(offsetof(TYPE, MEMBER)	+ sizeof(((TYPE *)0)->MEMBER))
+
 #endif

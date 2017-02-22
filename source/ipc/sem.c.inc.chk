@@ -15,7 +15,7 @@
 [DONE].............. ./include/asm-generic/bitsperlong.h
 [DONE]............... ./include/uapi/asm-generic/bitsperlong.h
 [    ]......... ./include/uapi/linux/posix_types.h
-[    ].......... ./include/linux/stddef.h
+[DONE].......... ./include/linux/stddef.h
 [DONE]........... ./include/uapi/linux/stddef.h
 [SCND]............ ./include/linux/compiler.h
 .......... ./arch/x86/include/asm/posix_types.h

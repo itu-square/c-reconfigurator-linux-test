@@ -93,4 +93,14 @@ enum
     false_V1 = 0 , true_V1 = 1}
 ;
 
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef struct
+{
+    unsigned long fds_bits [ 1024 / (8 * sizeof (long)) ];
+}
+__kernel_fd_set_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef void (* __kernel_sighandler_t_V1) (int);
+
 // END #include <linux/slab.h>
