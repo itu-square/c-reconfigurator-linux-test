@@ -54,43 +54,43 @@ typedef __kernel_uid_t	__kernel_old_uid_t;
 typedef __kernel_gid_t	__kernel_old_gid_t;
 #endif
 
-// /*AFLA*/ #ifndef __kernel_old_dev_t
-// /*AFLA*/ typedef unsigned int	__kernel_old_dev_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * Most 32 bit architectures use "unsigned int" size_t,
-// /*AFLA*/  * and all 64 bit architectures use "unsigned long" size_t.
-// /*AFLA*/  */
-// /*AFLA*/ #ifndef __kernel_size_t
-// /*AFLA*/ #if __BITS_PER_LONG != 64
-// /*AFLA*/ typedef unsigned int	__kernel_size_t;
-// /*AFLA*/ typedef int		__kernel_ssize_t;
-// /*AFLA*/ typedef int		__kernel_ptrdiff_t;
-// /*AFLA*/ #else
-// /*AFLA*/ typedef __kernel_ulong_t __kernel_size_t;
-// /*AFLA*/ typedef __kernel_long_t	__kernel_ssize_t;
-// /*AFLA*/ typedef __kernel_long_t	__kernel_ptrdiff_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ #ifndef __kernel_fsid_t
-// /*AFLA*/ typedef struct {
-// /*AFLA*/ 	int	val[2];
-// /*AFLA*/ } __kernel_fsid_t;
-// /*AFLA*/ #endif
-// /*AFLA*/ 
-// /*AFLA*/ /*
-// /*AFLA*/  * anything below here should be completely generic
-// /*AFLA*/  */
-// /*AFLA*/ typedef __kernel_long_t	__kernel_off_t;
-// /*AFLA*/ typedef long long	__kernel_loff_t;
-// /*AFLA*/ typedef __kernel_long_t	__kernel_time_t;
-// /*AFLA*/ typedef __kernel_long_t	__kernel_clock_t;
-// /*AFLA*/ typedef int		__kernel_timer_t;
-// /*AFLA*/ typedef int		__kernel_clockid_t;
-// /*AFLA*/ typedef char *		__kernel_caddr_t;
-// /*AFLA*/ typedef unsigned short	__kernel_uid16_t;
-// /*AFLA*/ typedef unsigned short	__kernel_gid16_t;
-// /*AFLA*/ 
+#ifndef __kernel_old_dev_t
+typedef unsigned int	__kernel_old_dev_t;
+#endif
+
+/*
+ * Most 32 bit architectures use "unsigned int" size_t,
+ * and all 64 bit architectures use "unsigned long" size_t.
+ */
+#ifndef __kernel_size_t
+#if __BITS_PER_LONG != 64
+typedef unsigned int	__kernel_size_t;
+typedef int		__kernel_ssize_t;
+typedef int		__kernel_ptrdiff_t;
+#else
+typedef __kernel_ulong_t __kernel_size_t;
+typedef __kernel_long_t	__kernel_ssize_t;
+typedef __kernel_long_t	__kernel_ptrdiff_t;
+#endif
+#endif
+
+#ifndef __kernel_fsid_t
+typedef struct {
+	int	val[2];
+} __kernel_fsid_t;
+#endif
+
+/*
+ * anything below here should be completely generic
+ */
+typedef __kernel_long_t	__kernel_off_t;
+typedef long long	__kernel_loff_t;
+typedef __kernel_long_t	__kernel_time_t;
+typedef __kernel_long_t	__kernel_clock_t;
+typedef int		__kernel_timer_t;
+typedef int		__kernel_clockid_t;
+typedef char *		__kernel_caddr_t;
+typedef unsigned short	__kernel_uid16_t;
+typedef unsigned short	__kernel_gid16_t;
+
 #endif /* __ASM_GENERIC_POSIX_TYPES_H */

@@ -160,4 +160,122 @@ typedef unsigned int __kernel_uid32_t_V1;
 // !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_uid32_t)
 typedef unsigned int __kernel_gid32_t_V1;
 
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(__ILP32__) && !defined(__kernel_size_t)
+typedef unsigned int __kernel_size_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(__ILP32__) && !defined(__kernel_size_t)
+typedef int __kernel_ssize_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__ILP32__) && !defined(__kernel_long_t) && !defined(__kernel_size_t)
+typedef __kernel_ulong_t_V1 __kernel_size_t_V2;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__ILP32__) && defined(__kernel_long_t) && !defined(__kernel_size_t)
+typedef __kernel_ulong_t __kernel_size_t_V3;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__ILP32__) && !defined(__kernel_long_t) && !defined(__kernel_size_t)
+typedef __kernel_long_t_V1 __kernel_ssize_t_V2;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__ILP32__) && defined(__kernel_long_t) && !defined(__kernel_size_t)
+typedef __kernel_long_t __kernel_ssize_t_V3;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(__ILP32__) && !defined(__kernel_size_t)
+typedef int __kernel_ptrdiff_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__ILP32__) && !defined(__kernel_long_t) && !defined(__kernel_size_t)
+typedef __kernel_long_t_V1 __kernel_ptrdiff_t_V2;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__ILP32__) && defined(__kernel_long_t) && !defined(__kernel_size_t)
+typedef __kernel_long_t __kernel_ptrdiff_t_V3;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_fsid_t)
+typedef struct
+{
+    int val [ 2 ];
+}
+__kernel_fsid_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_long_t)
+typedef __kernel_long_t_V1 __kernel_off_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(__kernel_long_t)
+typedef __kernel_long_t __kernel_off_t_V2;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef long long __kernel_loff_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_long_t)
+typedef __kernel_long_t_V1 __kernel_time_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(__kernel_long_t)
+typedef __kernel_long_t __kernel_time_t_V2;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__kernel_long_t)
+typedef __kernel_long_t_V1 __kernel_clock_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(__kernel_long_t)
+typedef __kernel_long_t __kernel_clock_t_V2;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef int __kernel_timer_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef int __kernel_clockid_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef char* __kernel_caddr_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef unsigned short __kernel_uid16_t_V1;
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+typedef unsigned short __kernel_gid16_t_V1;
+
+// !defined(__ASSEMBLY__) && !defined(__CHECKER__) && defined(__KERNEL__) || !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__CHECK_ENDIAN__)
+typedef __u16_V1 __le16_V1;
+
+// !defined(__ASSEMBLY__) && defined(__CHECKER__) && defined(__KERNEL__) && defined(__CHECK_ENDIAN__)
+typedef __u16_V1 __attribute__ ((bitwise)) __le16_V2;
+
+// !defined(__ASSEMBLY__) && !defined(__CHECKER__) && defined(__KERNEL__) || !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__CHECK_ENDIAN__)
+typedef __u16_V1 __be16_V1;
+
+// !defined(__ASSEMBLY__) && defined(__CHECKER__) && defined(__KERNEL__) && defined(__CHECK_ENDIAN__)
+typedef __u16_V1 __attribute__ ((bitwise)) __be16_V2;
+
+// !defined(__ASSEMBLY__) && !defined(__CHECKER__) && defined(__KERNEL__) || !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__CHECK_ENDIAN__)
+typedef __u32_V1 __le32_V1;
+
+// !defined(__ASSEMBLY__) && defined(__CHECKER__) && defined(__KERNEL__) && defined(__CHECK_ENDIAN__)
+typedef __u32_V1 __attribute__ ((bitwise)) __le32_V2;
+
+// !defined(__ASSEMBLY__) && !defined(__CHECKER__) && defined(__KERNEL__) || !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__CHECK_ENDIAN__)
+typedef __u32_V1 __be32_V1;
+
+// !defined(__ASSEMBLY__) && defined(__CHECKER__) && defined(__KERNEL__) && defined(__CHECK_ENDIAN__)
+typedef __u32_V1 __attribute__ ((bitwise)) __be32_V2;
+
+// !defined(__ASSEMBLY__) && !defined(__CHECKER__) && defined(__KERNEL__) || !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__CHECK_ENDIAN__)
+typedef __u64_V1 __le64_V1;
+
+// !defined(__ASSEMBLY__) && defined(__CHECKER__) && defined(__KERNEL__) && defined(__CHECK_ENDIAN__)
+typedef __u64_V1 __attribute__ ((bitwise)) __le64_V2;
+
+// !defined(__ASSEMBLY__) && !defined(__CHECKER__) && defined(__KERNEL__) || !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__CHECK_ENDIAN__)
+typedef __u64_V1 __be64_V1;
+
+// !defined(__ASSEMBLY__) && defined(__CHECKER__) && defined(__KERNEL__) && defined(__CHECK_ENDIAN__)
+typedef __u64_V1 __attribute__ ((bitwise)) __be64_V2;
+
+// !defined(__ASSEMBLY__) && !defined(__CHECKER__) && defined(__KERNEL__) || !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__CHECK_ENDIAN__)
+typedef __u16_V1 __sum16_V1;
+
+// !defined(__ASSEMBLY__) && defined(__CHECKER__) && defined(__KERNEL__) && defined(__CHECK_ENDIAN__)
+typedef __u16_V1 __attribute__ ((bitwise)) __sum16_V2;
+
+// !defined(__ASSEMBLY__) && !defined(__CHECKER__) && defined(__KERNEL__) || !defined(__ASSEMBLY__) && defined(__KERNEL__) && !defined(__CHECK_ENDIAN__)
+typedef __u32_V1 __wsum_V1;
+
+// !defined(__ASSEMBLY__) && defined(__CHECKER__) && defined(__KERNEL__) && defined(__CHECK_ENDIAN__)
+typedef __u32_V1 __attribute__ ((bitwise)) __wsum_V2;
+
 // END #include <linux/slab.h>
