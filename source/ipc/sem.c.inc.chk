@@ -6,7 +6,7 @@
 [    ]...... ./include/asm-generic/bug.h
 [    ]....... ./include/linux/compiler.h
 [DONE]........ ./include/linux/compiler-gcc.h
-[    ]........ ./include/uapi/linux/types.h
+[DONE]........ ./include/uapi/linux/types.h
 [DONE]......... ./arch/x86/include/uapi/asm/types.h
 [DONE].......... ./include/uapi/asm-generic/types.h
 [DONE]........... ./include/asm-generic/int-ll64.h

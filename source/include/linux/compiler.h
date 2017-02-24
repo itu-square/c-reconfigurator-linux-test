@@ -222,27 +222,27 @@ void ftrace_likely_update(struct ftrace_branch_data *f, int val, int expect);
 #endif
 
 #include <uapi/linux/types.h>
-// /*AFLA*/ 
-// /*AFLA*/ #define __READ_ONCE_SIZE						\
-// /*AFLA*/ ({									\
-// /*AFLA*/ 	switch (size) {							\
-// /*AFLA*/ 	case 1: *(__u8 *)res = *(volatile __u8 *)p; break;		\
-// /*AFLA*/ 	case 2: *(__u16 *)res = *(volatile __u16 *)p; break;		\
-// /*AFLA*/ 	case 4: *(__u32 *)res = *(volatile __u32 *)p; break;		\
-// /*AFLA*/ 	case 8: *(__u64 *)res = *(volatile __u64 *)p; break;		\
-// /*AFLA*/ 	default:							\
-// /*AFLA*/ 		barrier();						\
-// /*AFLA*/ 		__builtin_memcpy((void *)res, (const void *)p, size);	\
-// /*AFLA*/ 		barrier();						\
-// /*AFLA*/ 	}								\
-// /*AFLA*/ })
-// /*AFLA*/ 
+
+#define __READ_ONCE_SIZE						\
+({									\
+	switch (size) {							\
+	case 1: *(__u8 *)res = *(volatile __u8 *)p; break;		\
+	case 2: *(__u16 *)res = *(volatile __u16 *)p; break;		\
+	case 4: *(__u32 *)res = *(volatile __u32 *)p; break;		\
+	case 8: *(__u64 *)res = *(volatile __u64 *)p; break;		\
+	default:							\
+		barrier();						\
+		__builtin_memcpy((void *)res, (const void *)p, size);	\
+		barrier();						\
+	}								\
+})
+
 // /*AFLA*/ static __always_inline
-// /*AFLA*/ void __read_once_size(const volatile void *p, void *res, int size)
-// /*AFLA*/ {
-// /*AFLA*/ 	__READ_ONCE_SIZE;
-// /*AFLA*/ }
-// /*AFLA*/ 
+void __read_once_size(const volatile void *p, void *res, int size)
+{
+	__READ_ONCE_SIZE;
+}
+
 // /*AFLA*/ #ifdef CONFIG_KASAN
 // /*AFLA*/ /*
 // /*AFLA*/  * This function is not 'inline' because __no_sanitize_address confilcts
