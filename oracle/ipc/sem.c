@@ -402,4 +402,22 @@ struct bug_entry_V4
 }
 ;
 
+// !defined(__ASSEMBLY__) && !defined(__KERNEL__) && defined(CONFIG_BUG) && !defined(__WARN_TAINT)
+extern void warn_slowpath_fmt_V1 (const char* file , const int line , const char* fmt , ...);
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(CONFIG_BUG) && !defined(__WARN_TAINT)
+extern __attribute__ ((format (printf , 3 , 4))) void warn_slowpath_fmt_V2 (const char* file , const int line , const char* fmt , ...);
+
+// !defined(__ASSEMBLY__) && !defined(__KERNEL__) && defined(CONFIG_BUG) && !defined(__WARN_TAINT)
+extern void warn_slowpath_fmt_taint_V1 (const char* file , const int line , unsigned taint , const char* fmt , ...);
+
+// !defined(__ASSEMBLY__) && defined(__KERNEL__) && defined(CONFIG_BUG) && !defined(__WARN_TAINT)
+extern __attribute__ ((format (printf , 4 , 5))) void warn_slowpath_fmt_taint_V2 (const char* file , const int line , unsigned taint , const char* fmt , ...);
+
+// !defined(__ASSEMBLY__) && defined(CONFIG_BUG) && !defined(__WARN_TAINT)
+extern void warn_slowpath_null_V1 (const char* file , const int line);
+
+// !defined(__ASSEMBLY__) && defined(CONFIG_BUG)
+struct warn_args_V1;
+
 // END #include <linux/slab.h>

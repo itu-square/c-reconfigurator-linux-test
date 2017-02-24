@@ -2973,6 +2973,339 @@
       |  |     |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
       |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
       |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<EXTERN>extern  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |  |- FunctionDeclarator
+      |  |  |  |- SimpleDeclarator
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>warn_slowpath_fmt_V1  
+      |  |  |  |- PostfixingFunctionDeclarator
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |     |- ParameterTypeListOpt
+      |  |  |     |  |- ParameterTypeList
+      |  |  |     |     |- ParameterList
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- BasicTypeSpecifier
+      |  |  |     |     |  |  |  |- TypeQualifierList
+      |  |  |     |     |  |  |  |  |- TypeQualifier
+      |  |  |     |     |  |  |  |     |- ConstQualifier
+      |  |  |     |     |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |     |     |  |  |- UnaryIdentifierDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |  |     |     |  |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>file  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- BasicTypeSpecifier
+      |  |  |     |     |  |  |  |- TypeQualifierList
+      |  |  |     |     |  |  |  |  |- TypeQualifier
+      |  |  |     |     |  |  |  |     |- ConstQualifier
+      |  |  |     |     |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |  |     |     |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>line  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |     |- BasicTypeSpecifier
+      |  |  |     |     |     |  |- TypeQualifierList
+      |  |  |     |     |     |  |  |- TypeQualifier
+      |  |  |     |     |     |  |     |- ConstQualifier
+      |  |  |     |     |     |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |     |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |     |     |     |- UnaryIdentifierDeclarator
+      |  |  |     |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |  |     |     |     |  |- SimpleDeclarator
+      |  |  |     |     |     |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>fmt  
+      |  |  |     |     |     |- AttributeSpecifierListOpt
+      |  |  |     |     |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |- xtc.lang.cpp.Syntax.Language<ELLIPSIS>...  
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<EXTERN>extern  
+      |  |  |  |  |- TypeQualifier
+      |  |  |  |     |- AttributeSpecifier
+      |  |  |  |        |- AttributeKeyword
+      |  |  |  |        |  |- xtc.lang.cpp.Syntax.Language<__ATTRIBUTE__>__attribute__  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |        |- AttributeListOpt
+      |  |  |  |        |  |- AttributeList
+      |  |  |  |        |     |- Word
+      |  |  |  |        |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>format  
+      |  |  |  |        |     |- AttributeExpressionOpt
+      |  |  |  |        |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |        |        |- ExpressionList
+      |  |  |  |        |        |  |- PrimaryIdentifier
+      |  |  |  |        |        |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>printf  
+      |  |  |  |        |        |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |  |        |        |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>3  
+      |  |  |  |        |        |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |  |        |        |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>4  
+      |  |  |  |        |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |  |- FunctionDeclarator
+      |  |  |  |- SimpleDeclarator
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>warn_slowpath_fmt_V2  
+      |  |  |  |- PostfixingFunctionDeclarator
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |     |- ParameterTypeListOpt
+      |  |  |     |  |- ParameterTypeList
+      |  |  |     |     |- ParameterList
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- BasicTypeSpecifier
+      |  |  |     |     |  |  |  |- TypeQualifierList
+      |  |  |     |     |  |  |  |  |- TypeQualifier
+      |  |  |     |     |  |  |  |     |- ConstQualifier
+      |  |  |     |     |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |     |     |  |  |- UnaryIdentifierDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |  |     |     |  |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>file  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- BasicTypeSpecifier
+      |  |  |     |     |  |  |  |- TypeQualifierList
+      |  |  |     |     |  |  |  |  |- TypeQualifier
+      |  |  |     |     |  |  |  |     |- ConstQualifier
+      |  |  |     |     |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |  |     |     |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>line  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |     |- BasicTypeSpecifier
+      |  |  |     |     |     |  |- TypeQualifierList
+      |  |  |     |     |     |  |  |- TypeQualifier
+      |  |  |     |     |     |  |     |- ConstQualifier
+      |  |  |     |     |     |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |     |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |     |     |     |- UnaryIdentifierDeclarator
+      |  |  |     |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |  |     |     |     |  |- SimpleDeclarator
+      |  |  |     |     |     |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>fmt  
+      |  |  |     |     |     |- AttributeSpecifierListOpt
+      |  |  |     |     |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |- xtc.lang.cpp.Syntax.Language<ELLIPSIS>...  
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<EXTERN>extern  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |  |- FunctionDeclarator
+      |  |  |  |- SimpleDeclarator
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>warn_slowpath_fmt_taint_V1  
+      |  |  |  |- PostfixingFunctionDeclarator
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |     |- ParameterTypeListOpt
+      |  |  |     |  |- ParameterTypeList
+      |  |  |     |     |- ParameterList
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- BasicTypeSpecifier
+      |  |  |     |     |  |  |  |- TypeQualifierList
+      |  |  |     |     |  |  |  |  |- TypeQualifier
+      |  |  |     |     |  |  |  |     |- ConstQualifier
+      |  |  |     |     |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |     |     |  |  |- UnaryIdentifierDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |  |     |     |  |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>file  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- BasicTypeSpecifier
+      |  |  |     |     |  |  |  |- TypeQualifierList
+      |  |  |     |     |  |  |  |  |- TypeQualifier
+      |  |  |     |     |  |  |  |     |- ConstQualifier
+      |  |  |     |     |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |  |     |     |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>line  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |  |     |     |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>taint  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |     |- BasicTypeSpecifier
+      |  |  |     |     |     |  |- TypeQualifierList
+      |  |  |     |     |     |  |  |- TypeQualifier
+      |  |  |     |     |     |  |     |- ConstQualifier
+      |  |  |     |     |     |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |     |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |     |     |     |- UnaryIdentifierDeclarator
+      |  |  |     |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |  |     |     |     |  |- SimpleDeclarator
+      |  |  |     |     |     |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>fmt  
+      |  |  |     |     |     |- AttributeSpecifierListOpt
+      |  |  |     |     |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |- xtc.lang.cpp.Syntax.Language<ELLIPSIS>...  
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<EXTERN>extern  
+      |  |  |  |  |- TypeQualifier
+      |  |  |  |     |- AttributeSpecifier
+      |  |  |  |        |- AttributeKeyword
+      |  |  |  |        |  |- xtc.lang.cpp.Syntax.Language<__ATTRIBUTE__>__attribute__  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |        |- AttributeListOpt
+      |  |  |  |        |  |- AttributeList
+      |  |  |  |        |     |- Word
+      |  |  |  |        |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>format  
+      |  |  |  |        |     |- AttributeExpressionOpt
+      |  |  |  |        |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |        |        |- ExpressionList
+      |  |  |  |        |        |  |- PrimaryIdentifier
+      |  |  |  |        |        |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>printf  
+      |  |  |  |        |        |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |  |        |        |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>4  
+      |  |  |  |        |        |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |  |        |        |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>5  
+      |  |  |  |        |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |  |- FunctionDeclarator
+      |  |  |  |- SimpleDeclarator
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>warn_slowpath_fmt_taint_V2  
+      |  |  |  |- PostfixingFunctionDeclarator
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |     |- ParameterTypeListOpt
+      |  |  |     |  |- ParameterTypeList
+      |  |  |     |     |- ParameterList
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- BasicTypeSpecifier
+      |  |  |     |     |  |  |  |- TypeQualifierList
+      |  |  |     |     |  |  |  |  |- TypeQualifier
+      |  |  |     |     |  |  |  |     |- ConstQualifier
+      |  |  |     |     |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |     |     |  |  |- UnaryIdentifierDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |  |     |     |  |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>file  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- BasicTypeSpecifier
+      |  |  |     |     |  |  |  |- TypeQualifierList
+      |  |  |     |     |  |  |  |  |- TypeQualifier
+      |  |  |     |     |  |  |  |     |- ConstQualifier
+      |  |  |     |     |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |  |     |     |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>line  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |  |     |     |  |  |- SimpleDeclarator
+      |  |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>taint  
+      |  |  |     |     |  |  |- AttributeSpecifierListOpt
+      |  |  |     |     |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |  |- ParameterIdentifierDeclaration
+      |  |  |     |     |     |- BasicTypeSpecifier
+      |  |  |     |     |     |  |- TypeQualifierList
+      |  |  |     |     |     |  |  |- TypeQualifier
+      |  |  |     |     |     |  |     |- ConstQualifier
+      |  |  |     |     |     |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |     |     |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |     |     |     |- UnaryIdentifierDeclarator
+      |  |  |     |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |  |     |     |     |  |- SimpleDeclarator
+      |  |  |     |     |     |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>fmt  
+      |  |  |     |     |     |- AttributeSpecifierListOpt
+      |  |  |     |     |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |     |- xtc.lang.cpp.Syntax.Language<ELLIPSIS>...  
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- DeclaringList
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<EXTERN>extern  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |  |- FunctionDeclarator
+      |  |  |  |- SimpleDeclarator
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>warn_slowpath_null_V1  
+      |  |  |  |- PostfixingFunctionDeclarator
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |     |- ParameterTypeListOpt
+      |  |  |     |  |- ParameterTypeList
+      |  |  |     |     |- ParameterList
+      |  |  |     |        |- ParameterIdentifierDeclaration
+      |  |  |     |        |  |- BasicTypeSpecifier
+      |  |  |     |        |  |  |- TypeQualifierList
+      |  |  |     |        |  |  |  |- TypeQualifier
+      |  |  |     |        |  |  |     |- ConstQualifier
+      |  |  |     |        |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |        |  |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |  |     |        |  |- UnaryIdentifierDeclarator
+      |  |  |     |        |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |  |     |        |  |  |- SimpleDeclarator
+      |  |  |     |        |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>file  
+      |  |  |     |        |  |- AttributeSpecifierListOpt
+      |  |  |     |        |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |  |     |        |- ParameterIdentifierDeclaration
+      |  |  |     |           |- BasicTypeSpecifier
+      |  |  |     |           |  |- TypeQualifierList
+      |  |  |     |           |  |  |- TypeQualifier
+      |  |  |     |           |  |     |- ConstQualifier
+      |  |  |     |           |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |  |     |           |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |  |     |           |- SimpleDeclarator
+      |  |  |     |           |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>line  
+      |  |  |     |           |- AttributeSpecifierListOpt
+      |  |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |- AssemblyExpressionOpt
+      |  |  |- AttributeSpecifierListOpt
+      |  |  |- InitializerOpt
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- SUETypeSpecifier
+      |  |  |- StructSpecifier
+      |  |     |- xtc.lang.cpp.Syntax.Language<STRUCT>struct  
+      |  |     |- IdentifierOrTypedefName
+      |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>warn_args_V1  
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
          |- DeclaringList
          |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
          |  |- ArrayDeclarator
