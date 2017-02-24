@@ -2793,6 +2793,186 @@
       |  |           |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
       |  |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
       |- Declaration
+      |  |- SUETypeSpecifier
+      |  |  |- StructSpecifier
+      |  |     |- xtc.lang.cpp.Syntax.Language<STRUCT>struct  
+      |  |     |- IdentifierOrTypedefName
+      |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>bug_entry_V1  
+      |  |     |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |     |- StructDeclarationList
+      |  |     |  |- StructDeclaration
+      |  |     |  |  |- StructDeclaringList
+      |  |     |  |  |  |- BasicTypeSpecifier
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LONG>long  
+      |  |     |  |  |  |- StructDeclarator
+      |  |     |  |  |  |  |- SimpleDeclarator
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>bug_addr  
+      |  |     |  |  |  |  |- BitFieldSizeOpt
+      |  |     |  |  |  |- AttributeSpecifierListOpt
+      |  |     |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |  |- StructDeclaration
+      |  |     |  |  |- StructDeclaringList
+      |  |     |  |  |  |- BasicTypeSpecifier
+      |  |     |  |  |  |  |- TypeQualifierList
+      |  |     |  |  |  |  |  |- TypeQualifier
+      |  |     |  |  |  |  |     |- ConstQualifier
+      |  |     |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
+      |  |     |  |  |  |- StructDeclarator
+      |  |     |  |  |  |  |- UnaryIdentifierDeclarator
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |     |  |  |  |  |  |- SimpleDeclarator
+      |  |     |  |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>file  
+      |  |     |  |  |  |  |- BitFieldSizeOpt
+      |  |     |  |  |  |- AttributeSpecifierListOpt
+      |  |     |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |  |- StructDeclaration
+      |  |     |  |  |- StructDeclaringList
+      |  |     |  |  |  |- BasicTypeSpecifier
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<SHORT>short  
+      |  |     |  |  |  |- StructDeclarator
+      |  |     |  |  |  |  |- SimpleDeclarator
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>line  
+      |  |     |  |  |  |  |- BitFieldSizeOpt
+      |  |     |  |  |  |- AttributeSpecifierListOpt
+      |  |     |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |  |- StructDeclaration
+      |  |     |     |- StructDeclaringList
+      |  |     |     |  |- BasicTypeSpecifier
+      |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<SHORT>short  
+      |  |     |     |  |- StructDeclarator
+      |  |     |     |  |  |- SimpleDeclarator
+      |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>flags  
+      |  |     |     |  |  |- BitFieldSizeOpt
+      |  |     |     |  |- AttributeSpecifierListOpt
+      |  |     |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- SUETypeSpecifier
+      |  |  |- StructSpecifier
+      |  |     |- xtc.lang.cpp.Syntax.Language<STRUCT>struct  
+      |  |     |- IdentifierOrTypedefName
+      |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>bug_entry_V2  
+      |  |     |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |     |- StructDeclarationList
+      |  |     |  |- StructDeclaration
+      |  |     |  |  |- StructDeclaringList
+      |  |     |  |  |  |- BasicTypeSpecifier
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LONG>long  
+      |  |     |  |  |  |- StructDeclarator
+      |  |     |  |  |  |  |- SimpleDeclarator
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>bug_addr  
+      |  |     |  |  |  |  |- BitFieldSizeOpt
+      |  |     |  |  |  |- AttributeSpecifierListOpt
+      |  |     |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |  |- StructDeclaration
+      |  |     |     |- StructDeclaringList
+      |  |     |     |  |- BasicTypeSpecifier
+      |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<SHORT>short  
+      |  |     |     |  |- StructDeclarator
+      |  |     |     |  |  |- SimpleDeclarator
+      |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>flags  
+      |  |     |     |  |  |- BitFieldSizeOpt
+      |  |     |     |  |- AttributeSpecifierListOpt
+      |  |     |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- SUETypeSpecifier
+      |  |  |- StructSpecifier
+      |  |     |- xtc.lang.cpp.Syntax.Language<STRUCT>struct  
+      |  |     |- IdentifierOrTypedefName
+      |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>bug_entry_V3  
+      |  |     |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |     |- StructDeclarationList
+      |  |     |  |- StructDeclaration
+      |  |     |  |  |- StructDeclaringList
+      |  |     |  |  |  |- BasicTypeSpecifier
+      |  |     |  |  |  |  |- SignedKeyword
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<SIGNED>signed  
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |     |  |  |  |- StructDeclarator
+      |  |     |  |  |  |  |- SimpleDeclarator
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>bug_addr_disp  
+      |  |     |  |  |  |  |- BitFieldSizeOpt
+      |  |     |  |  |  |- AttributeSpecifierListOpt
+      |  |     |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |  |- StructDeclaration
+      |  |     |  |  |- StructDeclaringList
+      |  |     |  |  |  |- BasicTypeSpecifier
+      |  |     |  |  |  |  |- SignedKeyword
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<SIGNED>signed  
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |     |  |  |  |- StructDeclarator
+      |  |     |  |  |  |  |- SimpleDeclarator
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>file_disp  
+      |  |     |  |  |  |  |- BitFieldSizeOpt
+      |  |     |  |  |  |- AttributeSpecifierListOpt
+      |  |     |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |  |- StructDeclaration
+      |  |     |  |  |- StructDeclaringList
+      |  |     |  |  |  |- BasicTypeSpecifier
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<SHORT>short  
+      |  |     |  |  |  |- StructDeclarator
+      |  |     |  |  |  |  |- SimpleDeclarator
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>line  
+      |  |     |  |  |  |  |- BitFieldSizeOpt
+      |  |     |  |  |  |- AttributeSpecifierListOpt
+      |  |     |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |  |- StructDeclaration
+      |  |     |     |- StructDeclaringList
+      |  |     |     |  |- BasicTypeSpecifier
+      |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<SHORT>short  
+      |  |     |     |  |- StructDeclarator
+      |  |     |     |  |  |- SimpleDeclarator
+      |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>flags  
+      |  |     |     |  |  |- BitFieldSizeOpt
+      |  |     |     |  |- AttributeSpecifierListOpt
+      |  |     |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
+      |  |- SUETypeSpecifier
+      |  |  |- StructSpecifier
+      |  |     |- xtc.lang.cpp.Syntax.Language<STRUCT>struct  
+      |  |     |- IdentifierOrTypedefName
+      |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>bug_entry_V4  
+      |  |     |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |     |- StructDeclarationList
+      |  |     |  |- StructDeclaration
+      |  |     |  |  |- StructDeclaringList
+      |  |     |  |  |  |- BasicTypeSpecifier
+      |  |     |  |  |  |  |- SignedKeyword
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<SIGNED>signed  
+      |  |     |  |  |  |  |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |     |  |  |  |- StructDeclarator
+      |  |     |  |  |  |  |- SimpleDeclarator
+      |  |     |  |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>bug_addr_disp  
+      |  |     |  |  |  |  |- BitFieldSizeOpt
+      |  |     |  |  |  |- AttributeSpecifierListOpt
+      |  |     |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |  |- StructDeclaration
+      |  |     |     |- StructDeclaringList
+      |  |     |     |  |- BasicTypeSpecifier
+      |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<UNSIGNED>unsigned  
+      |  |     |     |  |  |- xtc.lang.cpp.Syntax.Language<SHORT>short  
+      |  |     |     |  |- StructDeclarator
+      |  |     |     |  |  |- SimpleDeclarator
+      |  |     |     |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>flags  
+      |  |     |     |  |  |- BitFieldSizeOpt
+      |  |     |     |  |- AttributeSpecifierListOpt
+      |  |     |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |     |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |- Declaration
          |- DeclaringList
          |  |- xtc.lang.cpp.Syntax.Language<CHAR>char  
          |  |- ArrayDeclarator

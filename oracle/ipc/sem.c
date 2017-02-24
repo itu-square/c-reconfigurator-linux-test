@@ -366,4 +366,40 @@ static void __write_once_size_V1 (volatile void* p , void* res , int size)
     }
 }
 
+// defined(CONFIG_DEBUG_BUGVERBOSE) && !defined(__ASSEMBLY__) && defined(CONFIG_GENERIC_BUG) && defined(CONFIG_BUG) && !defined(CONFIG_GENERIC_BUG_RELATIVE_POINTERS)
+struct bug_entry_V1
+{
+    unsigned long bug_addr;
+    const char* file;
+    unsigned short line;
+    unsigned short flags;
+}
+;
+
+// !defined(CONFIG_DEBUG_BUGVERBOSE) && !defined(__ASSEMBLY__) && defined(CONFIG_GENERIC_BUG) && defined(CONFIG_BUG) && !defined(CONFIG_GENERIC_BUG_RELATIVE_POINTERS)
+struct bug_entry_V2
+{
+    unsigned long bug_addr;
+    unsigned short flags;
+}
+;
+
+// defined(CONFIG_DEBUG_BUGVERBOSE) && !defined(__ASSEMBLY__) && defined(CONFIG_GENERIC_BUG) && defined(CONFIG_BUG) && defined(CONFIG_GENERIC_BUG_RELATIVE_POINTERS)
+struct bug_entry_V3
+{
+    signed int bug_addr_disp;
+    signed int file_disp;
+    unsigned short line;
+    unsigned short flags;
+}
+;
+
+// !defined(CONFIG_DEBUG_BUGVERBOSE) && !defined(__ASSEMBLY__) && defined(CONFIG_GENERIC_BUG) && defined(CONFIG_BUG) && defined(CONFIG_GENERIC_BUG_RELATIVE_POINTERS)
+struct bug_entry_V4
+{
+    signed int bug_addr_disp;
+    unsigned short flags;
+}
+;
+
 // END #include <linux/slab.h>
