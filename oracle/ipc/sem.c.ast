@@ -1477,7 +1477,10 @@
       |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
       |- FunctionDefinition
       |  |- FunctionPrototype
-      |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<STATIC>static  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
       |  |  |- FunctionDeclarator
       |  |     |- SimpleDeclarator
       |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__read_once_size_V1  
@@ -1797,6 +1800,997 @@
       |  |        |  |  |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
       |  |        |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
       |  |        |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |- FunctionDefinition
+      |  |- FunctionPrototype
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<STATIC>static  
+      |  |  |  |  |- TypeQualifier
+      |  |  |  |  |  |- AttributeSpecifier
+      |  |  |  |  |     |- AttributeKeyword
+      |  |  |  |  |     |  |- xtc.lang.cpp.Syntax.Language<__ATTRIBUTE__>__attribute__  
+      |  |  |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |  |     |- AttributeListOpt
+      |  |  |  |  |     |  |- AttributeList
+      |  |  |  |  |     |     |- Word
+      |  |  |  |  |     |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>no_sanitize_address  
+      |  |  |  |  |     |     |- AttributeExpressionOpt
+      |  |  |  |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |  |- TypeQualifier
+      |  |  |  |     |- AttributeSpecifier
+      |  |  |  |        |- AttributeKeyword
+      |  |  |  |        |  |- xtc.lang.cpp.Syntax.Language<__ATTRIBUTE__>__attribute__  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |  |  |        |- AttributeListOpt
+      |  |  |  |        |  |- AttributeList
+      |  |  |  |        |     |- Word
+      |  |  |  |        |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>unused  
+      |  |  |  |        |     |- AttributeExpressionOpt
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |  |- FunctionDeclarator
+      |  |     |- SimpleDeclarator
+      |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__read_once_size_nocheck_V1  
+      |  |     |- PostfixingFunctionDeclarator
+      |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |- ParameterTypeListOpt
+      |  |        |  |- ParameterTypeList
+      |  |        |     |- ParameterList
+      |  |        |        |- ParameterIdentifierDeclaration
+      |  |        |        |  |- BasicTypeSpecifier
+      |  |        |        |  |  |- TypeQualifierList
+      |  |        |        |  |  |  |- TypeQualifier
+      |  |        |        |  |  |  |  |- ConstQualifier
+      |  |        |        |  |  |  |     |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |        |        |  |  |  |- TypeQualifier
+      |  |        |        |  |  |     |- VolatileQualifier
+      |  |        |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |        |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |        |  |- UnaryIdentifierDeclarator
+      |  |        |        |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |        |  |  |- SimpleDeclarator
+      |  |        |        |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |        |  |- AttributeSpecifierListOpt
+      |  |        |        |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |        |- ParameterIdentifierDeclaration
+      |  |        |        |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |        |  |- UnaryIdentifierDeclarator
+      |  |        |        |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |        |  |  |- SimpleDeclarator
+      |  |        |        |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |        |  |- AttributeSpecifierListOpt
+      |  |        |        |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |        |- ParameterIdentifierDeclaration
+      |  |        |           |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |        |           |- SimpleDeclarator
+      |  |        |           |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>size  
+      |  |        |           |- AttributeSpecifierListOpt
+      |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |- CompoundStatement
+      |  |  |- LocalLabelDeclarationListOpt
+      |  |  |- DeclarationOrStatementList
+      |  |     |- ExpressionStatement
+      |  |        |- StatementAsExpression
+      |  |        |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |- CompoundStatement
+      |  |        |  |  |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |        |  |  |- LocalLabelDeclarationListOpt
+      |  |        |  |  |- DeclarationOrStatementList
+      |  |        |  |  |  |- SelectionStatement
+      |  |        |  |  |     |- xtc.lang.cpp.Syntax.Language<SWITCH>switch  
+      |  |        |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |     |- PrimaryIdentifier
+      |  |        |  |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>size  
+      |  |        |  |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |     |- CompoundStatement
+      |  |        |  |  |        |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |        |  |  |        |- LocalLabelDeclarationListOpt
+      |  |        |  |  |        |- DeclarationOrStatementList
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>1  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- ExpressionStatement
+      |  |        |  |  |        |  |     |- AssignmentExpression
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |  |  |- Unaryoperator
+      |  |        |  |  |        |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |  |- CastExpression
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |  |     |- TypeName
+      |  |        |  |  |        |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u8  
+      |  |        |  |  |        |  |     |  |     |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |  |     |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |     |  |- AssignmentOperator
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |     |- Unaryoperator
+      |  |        |  |  |        |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |     |- CastExpression
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |        |- TypeName
+      |  |        |  |  |        |  |     |        |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |        |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |     |        |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |     |        |  |  |     |- VolatileQualifier
+      |  |        |  |  |        |  |     |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |  |  |        |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u8  
+      |  |        |  |  |        |  |     |        |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |        |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |        |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- BreakStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>2  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- ExpressionStatement
+      |  |        |  |  |        |  |     |- AssignmentExpression
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |  |  |- Unaryoperator
+      |  |        |  |  |        |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |  |- CastExpression
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |  |     |- TypeName
+      |  |        |  |  |        |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u16  
+      |  |        |  |  |        |  |     |  |     |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |  |     |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |     |  |- AssignmentOperator
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |     |- Unaryoperator
+      |  |        |  |  |        |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |     |- CastExpression
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |        |- TypeName
+      |  |        |  |  |        |  |     |        |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |        |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |     |        |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |     |        |  |  |     |- VolatileQualifier
+      |  |        |  |  |        |  |     |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |  |  |        |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u16  
+      |  |        |  |  |        |  |     |        |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |        |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |        |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- BreakStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>4  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- ExpressionStatement
+      |  |        |  |  |        |  |     |- AssignmentExpression
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |  |  |- Unaryoperator
+      |  |        |  |  |        |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |  |- CastExpression
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |  |     |- TypeName
+      |  |        |  |  |        |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u32  
+      |  |        |  |  |        |  |     |  |     |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |  |     |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |     |  |- AssignmentOperator
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |     |- Unaryoperator
+      |  |        |  |  |        |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |     |- CastExpression
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |        |- TypeName
+      |  |        |  |  |        |  |     |        |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |        |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |     |        |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |     |        |  |  |     |- VolatileQualifier
+      |  |        |  |  |        |  |     |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |  |  |        |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u32  
+      |  |        |  |  |        |  |     |        |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |        |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |        |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- BreakStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>8  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- ExpressionStatement
+      |  |        |  |  |        |  |     |- AssignmentExpression
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |  |  |- Unaryoperator
+      |  |        |  |  |        |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |  |- CastExpression
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |  |     |- TypeName
+      |  |        |  |  |        |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u64  
+      |  |        |  |  |        |  |     |  |     |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |  |     |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |     |  |- AssignmentOperator
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |     |- Unaryoperator
+      |  |        |  |  |        |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |     |- CastExpression
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |        |- TypeName
+      |  |        |  |  |        |  |     |        |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |        |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |     |        |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |     |        |  |  |     |- VolatileQualifier
+      |  |        |  |  |        |  |     |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |  |  |        |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u64  
+      |  |        |  |  |        |  |     |        |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |        |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |        |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- BreakStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<DEFAULT>default  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- AssemblyStatement
+      |  |        |  |  |        |  |     |- AsmKeyword
+      |  |        |  |  |        |  |     |  |- xtc.lang.cpp.Syntax.Language<__ASM__>__asm__  
+      |  |        |  |  |        |  |     |- TypeQualifier
+      |  |        |  |  |        |  |     |  |- VolatileQualifier
+      |  |        |  |  |        |  |     |     |- xtc.lang.cpp.Syntax.Language<__VOLATILE__>__volatile__  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |- Assemblyargument
+      |  |        |  |  |        |  |     |  |- StringLiteralList
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Text<STRINGliteral>""  
+      |  |        |  |  |        |  |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |     |  |- AssemblyoperandsOpt
+      |  |        |  |  |        |  |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |     |  |- AssemblyoperandsOpt
+      |  |        |  |  |        |  |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |     |  |- Assemblyclobbers
+      |  |        |  |  |        |  |     |     |- StringLiteralList
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Text<STRINGliteral>"memory"  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- ExpressionStatement
+      |  |        |  |  |        |  |  |- FunctionCall
+      |  |        |  |  |        |  |  |  |- PrimaryIdentifier
+      |  |        |  |  |        |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__builtin_memcpy  
+      |  |        |  |  |        |  |  |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |  |  |- ExpressionList
+      |  |        |  |  |        |  |  |  |  |- CastExpression
+      |  |        |  |  |        |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |  |  |  |  |- TypeName
+      |  |        |  |  |        |  |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |  |  |        |  |  |  |  |  |  |- AbstractDeclarator
+      |  |        |  |  |        |  |  |  |  |  |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |  |  |  |  |- PrimaryIdentifier
+      |  |        |  |  |        |  |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |  |  |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |  |  |        |  |  |  |  |- CastExpression
+      |  |        |  |  |        |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |  |  |  |  |- TypeName
+      |  |        |  |  |        |  |  |  |  |  |  |- BasicTypeSpecifier
+      |  |        |  |  |        |  |  |  |  |  |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |  |  |  |  |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |  |  |  |  |  |  |     |- ConstQualifier
+      |  |        |  |  |        |  |  |  |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |        |  |  |        |  |  |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |  |  |        |  |  |  |  |  |  |- AbstractDeclarator
+      |  |        |  |  |        |  |  |  |  |  |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |  |  |  |  |- PrimaryIdentifier
+      |  |        |  |  |        |  |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |  |  |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |  |  |        |  |  |  |  |- PrimaryIdentifier
+      |  |        |  |  |        |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>size  
+      |  |        |  |  |        |  |  |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- AssemblyStatement
+      |  |        |  |  |        |     |- AsmKeyword
+      |  |        |  |  |        |     |  |- xtc.lang.cpp.Syntax.Language<__ASM__>__asm__  
+      |  |        |  |  |        |     |- TypeQualifier
+      |  |        |  |  |        |     |  |- VolatileQualifier
+      |  |        |  |  |        |     |     |- xtc.lang.cpp.Syntax.Language<__VOLATILE__>__volatile__  
+      |  |        |  |  |        |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |     |- Assemblyargument
+      |  |        |  |  |        |     |  |- StringLiteralList
+      |  |        |  |  |        |     |  |  |- xtc.lang.cpp.Syntax.Text<STRINGliteral>""  
+      |  |        |  |  |        |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |     |  |- AssemblyoperandsOpt
+      |  |        |  |  |        |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |     |  |- AssemblyoperandsOpt
+      |  |        |  |  |        |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |     |  |- Assemblyclobbers
+      |  |        |  |  |        |     |     |- StringLiteralList
+      |  |        |  |  |        |     |        |- xtc.lang.cpp.Syntax.Text<STRINGliteral>"memory"  
+      |  |        |  |  |        |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |  |        |  |  |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |  |        |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |- FunctionDefinition
+      |  |- FunctionPrototype
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<STATIC>static  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |  |- FunctionDeclarator
+      |  |     |- SimpleDeclarator
+      |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__read_once_size_nocheck_V2  
+      |  |     |- PostfixingFunctionDeclarator
+      |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |- ParameterTypeListOpt
+      |  |        |  |- ParameterTypeList
+      |  |        |     |- ParameterList
+      |  |        |        |- ParameterIdentifierDeclaration
+      |  |        |        |  |- BasicTypeSpecifier
+      |  |        |        |  |  |- TypeQualifierList
+      |  |        |        |  |  |  |- TypeQualifier
+      |  |        |        |  |  |  |  |- ConstQualifier
+      |  |        |        |  |  |  |     |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |        |        |  |  |  |- TypeQualifier
+      |  |        |        |  |  |     |- VolatileQualifier
+      |  |        |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |        |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |        |  |- UnaryIdentifierDeclarator
+      |  |        |        |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |        |  |  |- SimpleDeclarator
+      |  |        |        |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |        |  |- AttributeSpecifierListOpt
+      |  |        |        |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |        |- ParameterIdentifierDeclaration
+      |  |        |        |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |        |  |- UnaryIdentifierDeclarator
+      |  |        |        |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |        |  |  |- SimpleDeclarator
+      |  |        |        |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |        |  |- AttributeSpecifierListOpt
+      |  |        |        |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |        |- ParameterIdentifierDeclaration
+      |  |        |           |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |        |           |- SimpleDeclarator
+      |  |        |           |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>size  
+      |  |        |           |- AttributeSpecifierListOpt
+      |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |- CompoundStatement
+      |  |  |- LocalLabelDeclarationListOpt
+      |  |  |- DeclarationOrStatementList
+      |  |     |- ExpressionStatement
+      |  |        |- StatementAsExpression
+      |  |        |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |- CompoundStatement
+      |  |        |  |  |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |        |  |  |- LocalLabelDeclarationListOpt
+      |  |        |  |  |- DeclarationOrStatementList
+      |  |        |  |  |  |- SelectionStatement
+      |  |        |  |  |     |- xtc.lang.cpp.Syntax.Language<SWITCH>switch  
+      |  |        |  |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |     |- PrimaryIdentifier
+      |  |        |  |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>size  
+      |  |        |  |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |     |- CompoundStatement
+      |  |        |  |  |        |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |        |  |  |        |- LocalLabelDeclarationListOpt
+      |  |        |  |  |        |- DeclarationOrStatementList
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>1  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- ExpressionStatement
+      |  |        |  |  |        |  |     |- AssignmentExpression
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |  |  |- Unaryoperator
+      |  |        |  |  |        |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |  |- CastExpression
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |  |     |- TypeName
+      |  |        |  |  |        |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u8  
+      |  |        |  |  |        |  |     |  |     |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |  |     |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |     |  |- AssignmentOperator
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |     |- Unaryoperator
+      |  |        |  |  |        |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |     |- CastExpression
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |        |- TypeName
+      |  |        |  |  |        |  |     |        |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |        |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |     |        |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |     |        |  |  |     |- VolatileQualifier
+      |  |        |  |  |        |  |     |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |  |  |        |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u8  
+      |  |        |  |  |        |  |     |        |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |        |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |        |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- BreakStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>2  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- ExpressionStatement
+      |  |        |  |  |        |  |     |- AssignmentExpression
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |  |  |- Unaryoperator
+      |  |        |  |  |        |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |  |- CastExpression
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |  |     |- TypeName
+      |  |        |  |  |        |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u16  
+      |  |        |  |  |        |  |     |  |     |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |  |     |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |     |  |- AssignmentOperator
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |     |- Unaryoperator
+      |  |        |  |  |        |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |     |- CastExpression
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |        |- TypeName
+      |  |        |  |  |        |  |     |        |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |        |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |     |        |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |     |        |  |  |     |- VolatileQualifier
+      |  |        |  |  |        |  |     |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |  |  |        |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u16  
+      |  |        |  |  |        |  |     |        |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |        |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |        |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- BreakStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>4  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- ExpressionStatement
+      |  |        |  |  |        |  |     |- AssignmentExpression
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |  |  |- Unaryoperator
+      |  |        |  |  |        |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |  |- CastExpression
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |  |     |- TypeName
+      |  |        |  |  |        |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u32  
+      |  |        |  |  |        |  |     |  |     |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |  |     |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |     |  |- AssignmentOperator
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |     |- Unaryoperator
+      |  |        |  |  |        |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |     |- CastExpression
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |        |- TypeName
+      |  |        |  |  |        |  |     |        |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |        |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |     |        |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |     |        |  |  |     |- VolatileQualifier
+      |  |        |  |  |        |  |     |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |  |  |        |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u32  
+      |  |        |  |  |        |  |     |        |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |        |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |        |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- BreakStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>8  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- ExpressionStatement
+      |  |        |  |  |        |  |     |- AssignmentExpression
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |  |  |- Unaryoperator
+      |  |        |  |  |        |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |  |- CastExpression
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |  |     |- TypeName
+      |  |        |  |  |        |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u64  
+      |  |        |  |  |        |  |     |  |     |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |  |     |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |     |  |- AssignmentOperator
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |        |  |  |        |  |     |  |- UnaryExpression
+      |  |        |  |  |        |  |     |     |- Unaryoperator
+      |  |        |  |  |        |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |     |- CastExpression
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |        |- TypeName
+      |  |        |  |  |        |  |     |        |  |- TypedefTypeSpecifier
+      |  |        |  |  |        |  |     |        |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |     |        |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |     |        |  |  |     |- VolatileQualifier
+      |  |        |  |  |        |  |     |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |  |  |        |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u64  
+      |  |        |  |  |        |  |     |        |  |- AbstractDeclarator
+      |  |        |  |  |        |  |     |        |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |        |- PrimaryIdentifier
+      |  |        |  |  |        |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- BreakStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- LabeledStatement
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<DEFAULT>default  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |  |- AssemblyStatement
+      |  |        |  |  |        |  |     |- AsmKeyword
+      |  |        |  |  |        |  |     |  |- xtc.lang.cpp.Syntax.Language<__ASM__>__asm__  
+      |  |        |  |  |        |  |     |- TypeQualifier
+      |  |        |  |  |        |  |     |  |- VolatileQualifier
+      |  |        |  |  |        |  |     |     |- xtc.lang.cpp.Syntax.Language<__VOLATILE__>__volatile__  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |     |- Assemblyargument
+      |  |        |  |  |        |  |     |  |- StringLiteralList
+      |  |        |  |  |        |  |     |  |  |- xtc.lang.cpp.Syntax.Text<STRINGliteral>""  
+      |  |        |  |  |        |  |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |     |  |- AssemblyoperandsOpt
+      |  |        |  |  |        |  |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |     |  |- AssemblyoperandsOpt
+      |  |        |  |  |        |  |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |  |     |  |- Assemblyclobbers
+      |  |        |  |  |        |  |     |     |- StringLiteralList
+      |  |        |  |  |        |  |     |        |- xtc.lang.cpp.Syntax.Text<STRINGliteral>"memory"  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- ExpressionStatement
+      |  |        |  |  |        |  |  |- FunctionCall
+      |  |        |  |  |        |  |  |  |- PrimaryIdentifier
+      |  |        |  |  |        |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__builtin_memcpy  
+      |  |        |  |  |        |  |  |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |  |  |- ExpressionList
+      |  |        |  |  |        |  |  |  |  |- CastExpression
+      |  |        |  |  |        |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |  |  |  |  |- TypeName
+      |  |        |  |  |        |  |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |  |  |        |  |  |  |  |  |  |- AbstractDeclarator
+      |  |        |  |  |        |  |  |  |  |  |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |  |  |  |  |- PrimaryIdentifier
+      |  |        |  |  |        |  |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |  |  |        |  |  |  |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |  |  |        |  |  |  |  |- CastExpression
+      |  |        |  |  |        |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |  |  |  |  |  |- TypeName
+      |  |        |  |  |        |  |  |  |  |  |  |- BasicTypeSpecifier
+      |  |        |  |  |        |  |  |  |  |  |  |  |- TypeQualifierList
+      |  |        |  |  |        |  |  |  |  |  |  |  |  |- TypeQualifier
+      |  |        |  |  |        |  |  |  |  |  |  |  |     |- ConstQualifier
+      |  |        |  |  |        |  |  |  |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |        |  |  |        |  |  |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |  |  |        |  |  |  |  |  |  |- AbstractDeclarator
+      |  |        |  |  |        |  |  |  |  |  |     |- UnaryAbstractDeclarator
+      |  |        |  |  |        |  |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |  |  |        |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |  |  |  |  |- PrimaryIdentifier
+      |  |        |  |  |        |  |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |  |  |        |  |  |  |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |  |  |        |  |  |  |  |- PrimaryIdentifier
+      |  |        |  |  |        |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>size  
+      |  |        |  |  |        |  |  |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |  |- AssemblyStatement
+      |  |        |  |  |        |     |- AsmKeyword
+      |  |        |  |  |        |     |  |- xtc.lang.cpp.Syntax.Language<__ASM__>__asm__  
+      |  |        |  |  |        |     |- TypeQualifier
+      |  |        |  |  |        |     |  |- VolatileQualifier
+      |  |        |  |  |        |     |     |- xtc.lang.cpp.Syntax.Language<__VOLATILE__>__volatile__  
+      |  |        |  |  |        |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |  |  |        |     |- Assemblyargument
+      |  |        |  |  |        |     |  |- StringLiteralList
+      |  |        |  |  |        |     |  |  |- xtc.lang.cpp.Syntax.Text<STRINGliteral>""  
+      |  |        |  |  |        |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |     |  |- AssemblyoperandsOpt
+      |  |        |  |  |        |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |     |  |- AssemblyoperandsOpt
+      |  |        |  |  |        |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |        |  |  |        |     |  |- Assemblyclobbers
+      |  |        |  |  |        |     |     |- StringLiteralList
+      |  |        |  |  |        |     |        |- xtc.lang.cpp.Syntax.Text<STRINGliteral>"memory"  
+      |  |        |  |  |        |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |  |  |        |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |        |  |  |        |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |  |        |  |  |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |  |        |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
+      |- FunctionDefinition
+      |  |- FunctionPrototype
+      |  |  |- BasicDeclarationSpecifier
+      |  |  |  |- DeclarationQualifierList
+      |  |  |  |  |- xtc.lang.cpp.Syntax.Language<STATIC>static  
+      |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |  |- FunctionDeclarator
+      |  |     |- SimpleDeclarator
+      |  |     |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__write_once_size_V1  
+      |  |     |- PostfixingFunctionDeclarator
+      |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |- ParameterTypeListOpt
+      |  |        |  |- ParameterTypeList
+      |  |        |     |- ParameterList
+      |  |        |        |- ParameterIdentifierDeclaration
+      |  |        |        |  |- BasicTypeSpecifier
+      |  |        |        |  |  |- TypeQualifierList
+      |  |        |        |  |  |  |- TypeQualifier
+      |  |        |        |  |  |     |- VolatileQualifier
+      |  |        |        |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |        |        |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |        |  |- UnaryIdentifierDeclarator
+      |  |        |        |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |        |  |  |- SimpleDeclarator
+      |  |        |        |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |        |        |  |- AttributeSpecifierListOpt
+      |  |        |        |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |        |- ParameterIdentifierDeclaration
+      |  |        |        |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |        |        |  |- UnaryIdentifierDeclarator
+      |  |        |        |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |        |        |  |  |- SimpleDeclarator
+      |  |        |        |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |        |        |  |- AttributeSpecifierListOpt
+      |  |        |        |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |        |        |- ParameterIdentifierDeclaration
+      |  |        |           |- xtc.lang.cpp.Syntax.Language<INT>int  
+      |  |        |           |- SimpleDeclarator
+      |  |        |           |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>size  
+      |  |        |           |- AttributeSpecifierListOpt
+      |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |- CompoundStatement
+      |  |  |- LocalLabelDeclarationListOpt
+      |  |  |- DeclarationOrStatementList
+      |  |     |- SelectionStatement
+      |  |        |- xtc.lang.cpp.Syntax.Language<SWITCH>switch  
+      |  |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |        |- PrimaryIdentifier
+      |  |        |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>size  
+      |  |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |        |- CompoundStatement
+      |  |           |- xtc.lang.cpp.Syntax.Language<LBRACE>{  
+      |  |           |- LocalLabelDeclarationListOpt
+      |  |           |- DeclarationOrStatementList
+      |  |           |  |- LabeledStatement
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>1  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |  |  |- ExpressionStatement
+      |  |           |  |     |- AssignmentExpression
+      |  |           |  |     |  |- UnaryExpression
+      |  |           |  |     |  |  |- Unaryoperator
+      |  |           |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |  |  |- CastExpression
+      |  |           |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |     |  |     |- TypeName
+      |  |           |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |           |  |     |  |     |  |  |- TypeQualifierList
+      |  |           |  |     |  |     |  |  |  |- TypeQualifier
+      |  |           |  |     |  |     |  |  |     |- VolatileQualifier
+      |  |           |  |     |  |     |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |           |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u8  
+      |  |           |  |     |  |     |  |- AbstractDeclarator
+      |  |           |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |           |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |     |  |     |- PrimaryIdentifier
+      |  |           |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |           |  |     |  |- AssignmentOperator
+      |  |           |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |           |  |     |  |- UnaryExpression
+      |  |           |  |     |     |- Unaryoperator
+      |  |           |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |     |- CastExpression
+      |  |           |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |     |        |- TypeName
+      |  |           |  |     |        |  |- TypedefTypeSpecifier
+      |  |           |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u8  
+      |  |           |  |     |        |  |- AbstractDeclarator
+      |  |           |  |     |        |     |- UnaryAbstractDeclarator
+      |  |           |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |     |        |- PrimaryIdentifier
+      |  |           |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |           |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- BreakStatement
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- LabeledStatement
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>2  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |  |  |- ExpressionStatement
+      |  |           |  |     |- AssignmentExpression
+      |  |           |  |     |  |- UnaryExpression
+      |  |           |  |     |  |  |- Unaryoperator
+      |  |           |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |  |  |- CastExpression
+      |  |           |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |     |  |     |- TypeName
+      |  |           |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |           |  |     |  |     |  |  |- TypeQualifierList
+      |  |           |  |     |  |     |  |  |  |- TypeQualifier
+      |  |           |  |     |  |     |  |  |     |- VolatileQualifier
+      |  |           |  |     |  |     |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |           |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u16  
+      |  |           |  |     |  |     |  |- AbstractDeclarator
+      |  |           |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |           |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |     |  |     |- PrimaryIdentifier
+      |  |           |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |           |  |     |  |- AssignmentOperator
+      |  |           |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |           |  |     |  |- UnaryExpression
+      |  |           |  |     |     |- Unaryoperator
+      |  |           |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |     |- CastExpression
+      |  |           |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |     |        |- TypeName
+      |  |           |  |     |        |  |- TypedefTypeSpecifier
+      |  |           |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u16  
+      |  |           |  |     |        |  |- AbstractDeclarator
+      |  |           |  |     |        |     |- UnaryAbstractDeclarator
+      |  |           |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |     |        |- PrimaryIdentifier
+      |  |           |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |           |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- BreakStatement
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- LabeledStatement
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>4  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |  |  |- ExpressionStatement
+      |  |           |  |     |- AssignmentExpression
+      |  |           |  |     |  |- UnaryExpression
+      |  |           |  |     |  |  |- Unaryoperator
+      |  |           |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |  |  |- CastExpression
+      |  |           |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |     |  |     |- TypeName
+      |  |           |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |           |  |     |  |     |  |  |- TypeQualifierList
+      |  |           |  |     |  |     |  |  |  |- TypeQualifier
+      |  |           |  |     |  |     |  |  |     |- VolatileQualifier
+      |  |           |  |     |  |     |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |           |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u32  
+      |  |           |  |     |  |     |  |- AbstractDeclarator
+      |  |           |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |           |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |     |  |     |- PrimaryIdentifier
+      |  |           |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |           |  |     |  |- AssignmentOperator
+      |  |           |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |           |  |     |  |- UnaryExpression
+      |  |           |  |     |     |- Unaryoperator
+      |  |           |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |     |- CastExpression
+      |  |           |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |     |        |- TypeName
+      |  |           |  |     |        |  |- TypedefTypeSpecifier
+      |  |           |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u32  
+      |  |           |  |     |        |  |- AbstractDeclarator
+      |  |           |  |     |        |     |- UnaryAbstractDeclarator
+      |  |           |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |     |        |- PrimaryIdentifier
+      |  |           |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |           |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- BreakStatement
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- LabeledStatement
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<CASE>case  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Text<INTEGERconstant>8  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |  |  |- ExpressionStatement
+      |  |           |  |     |- AssignmentExpression
+      |  |           |  |     |  |- UnaryExpression
+      |  |           |  |     |  |  |- Unaryoperator
+      |  |           |  |     |  |  |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |  |  |- CastExpression
+      |  |           |  |     |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |     |  |     |- TypeName
+      |  |           |  |     |  |     |  |- TypedefTypeSpecifier
+      |  |           |  |     |  |     |  |  |- TypeQualifierList
+      |  |           |  |     |  |     |  |  |  |- TypeQualifier
+      |  |           |  |     |  |     |  |  |     |- VolatileQualifier
+      |  |           |  |     |  |     |  |  |        |- xtc.lang.cpp.Syntax.Language<VOLATILE>volatile  
+      |  |           |  |     |  |     |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u64  
+      |  |           |  |     |  |     |  |- AbstractDeclarator
+      |  |           |  |     |  |     |     |- UnaryAbstractDeclarator
+      |  |           |  |     |  |     |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |     |  |     |- PrimaryIdentifier
+      |  |           |  |     |  |        |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |           |  |     |  |- AssignmentOperator
+      |  |           |  |     |  |  |- xtc.lang.cpp.Syntax.Language<ASSIGN>=  
+      |  |           |  |     |  |- UnaryExpression
+      |  |           |  |     |     |- Unaryoperator
+      |  |           |  |     |     |  |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |     |- CastExpression
+      |  |           |  |     |        |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |     |        |- TypeName
+      |  |           |  |     |        |  |- TypedefTypeSpecifier
+      |  |           |  |     |        |  |  |- xtc.lang.cpp.Syntax.Text<TYPEDEFname>__u64  
+      |  |           |  |     |        |  |- AbstractDeclarator
+      |  |           |  |     |        |     |- UnaryAbstractDeclarator
+      |  |           |  |     |        |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |     |        |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |     |        |- PrimaryIdentifier
+      |  |           |  |     |           |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |           |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- BreakStatement
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<BREAK>break  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- LabeledStatement
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<DEFAULT>default  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |  |  |- AssemblyStatement
+      |  |           |  |     |- AsmKeyword
+      |  |           |  |     |  |- xtc.lang.cpp.Syntax.Language<__ASM__>__asm__  
+      |  |           |  |     |- TypeQualifier
+      |  |           |  |     |  |- VolatileQualifier
+      |  |           |  |     |     |- xtc.lang.cpp.Syntax.Language<__VOLATILE__>__volatile__  
+      |  |           |  |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |     |- Assemblyargument
+      |  |           |  |     |  |- StringLiteralList
+      |  |           |  |     |  |  |- xtc.lang.cpp.Syntax.Text<STRINGliteral>""  
+      |  |           |  |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |  |     |  |- AssemblyoperandsOpt
+      |  |           |  |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |  |     |  |- AssemblyoperandsOpt
+      |  |           |  |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |  |     |  |- Assemblyclobbers
+      |  |           |  |     |     |- StringLiteralList
+      |  |           |  |     |        |- xtc.lang.cpp.Syntax.Text<STRINGliteral>"memory"  
+      |  |           |  |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- ExpressionStatement
+      |  |           |  |  |- FunctionCall
+      |  |           |  |  |  |- PrimaryIdentifier
+      |  |           |  |  |  |  |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>__builtin_memcpy  
+      |  |           |  |  |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |  |  |- ExpressionList
+      |  |           |  |  |  |  |- CastExpression
+      |  |           |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |  |  |  |  |- TypeName
+      |  |           |  |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |           |  |  |  |  |  |  |- AbstractDeclarator
+      |  |           |  |  |  |  |  |     |- UnaryAbstractDeclarator
+      |  |           |  |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |  |  |  |  |- PrimaryIdentifier
+      |  |           |  |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>p  
+      |  |           |  |  |  |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |           |  |  |  |  |- CastExpression
+      |  |           |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |  |  |  |  |  |- TypeName
+      |  |           |  |  |  |  |  |  |- BasicTypeSpecifier
+      |  |           |  |  |  |  |  |  |  |- TypeQualifierList
+      |  |           |  |  |  |  |  |  |  |  |- TypeQualifier
+      |  |           |  |  |  |  |  |  |  |     |- ConstQualifier
+      |  |           |  |  |  |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<CONST>const  
+      |  |           |  |  |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<VOID>void  
+      |  |           |  |  |  |  |  |  |- AbstractDeclarator
+      |  |           |  |  |  |  |  |     |- UnaryAbstractDeclarator
+      |  |           |  |  |  |  |  |        |- xtc.lang.cpp.Syntax.Language<STAR>*  
+      |  |           |  |  |  |  |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |  |  |  |  |- PrimaryIdentifier
+      |  |           |  |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>res  
+      |  |           |  |  |  |  |- xtc.lang.cpp.Syntax.Language<COMMA>,  
+      |  |           |  |  |  |  |- PrimaryIdentifier
+      |  |           |  |  |  |     |- xtc.lang.cpp.Syntax.Text<IDENTIFIER>size  
+      |  |           |  |  |  |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |  |  |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |  |- AssemblyStatement
+      |  |           |     |- AsmKeyword
+      |  |           |     |  |- xtc.lang.cpp.Syntax.Language<__ASM__>__asm__  
+      |  |           |     |- TypeQualifier
+      |  |           |     |  |- VolatileQualifier
+      |  |           |     |     |- xtc.lang.cpp.Syntax.Language<__VOLATILE__>__volatile__  
+      |  |           |     |- xtc.lang.cpp.Syntax.Language<LPAREN>(  
+      |  |           |     |- Assemblyargument
+      |  |           |     |  |- StringLiteralList
+      |  |           |     |  |  |- xtc.lang.cpp.Syntax.Text<STRINGliteral>""  
+      |  |           |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |     |  |- AssemblyoperandsOpt
+      |  |           |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |     |  |- AssemblyoperandsOpt
+      |  |           |     |  |- xtc.lang.cpp.Syntax.Language<COLON>:  
+      |  |           |     |  |- Assemblyclobbers
+      |  |           |     |     |- StringLiteralList
+      |  |           |     |        |- xtc.lang.cpp.Syntax.Text<STRINGliteral>"memory"  
+      |  |           |     |- xtc.lang.cpp.Syntax.Language<RPAREN>)  
+      |  |           |     |- xtc.lang.cpp.Syntax.Language<SEMICOLON>;  
+      |  |           |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
       |  |- xtc.lang.cpp.Syntax.Language<RBRACE>}  
       |- Declaration
          |- DeclaringList

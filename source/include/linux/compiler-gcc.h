@@ -80,7 +80,7 @@
 #define __inline	__inline	notrace
 #endif
 
-#define __always_inline	inline __attribute__((always_inline))
+#define __always_inline// /*AFLA*/ 	inline __attribute__((always_inline))
 #define  noinline	__attribute__((noinline))
 
 #define __deprecated	__attribute__((deprecated))
