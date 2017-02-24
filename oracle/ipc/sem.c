@@ -278,4 +278,27 @@ typedef __u32_V1 __wsum_V1;
 // !defined(__ASSEMBLY__) && defined(__CHECKER__) && defined(__KERNEL__) && defined(__CHECK_ENDIAN__)
 typedef __u32_V1 __attribute__ ((bitwise)) __wsum_V2;
 
+// !defined(__ASSEMBLY__) && defined(__KERNEL__)
+void __read_once_size_V1 (const volatile void* p , void* res , int size)
+{
+    (
+    {
+        switch (size)
+        {
+            case 1 : * (__u8*) res = * (volatile __u8*) p;
+            break;
+            case 2 : * (__u16*) res = * (volatile __u16*) p;
+            break;
+            case 4 : * (__u32*) res = * (volatile __u32*) p;
+            break;
+            case 8 : * (__u64*) res = * (volatile __u64*) p;
+            break;
+            default : __asm__ __volatile__ ("" : : : "memory");
+            __builtin_memcpy ((void*) res , (const void*) p , size);
+            __asm__ __volatile__ ("" : : : "memory");
+        }
+    }
+    );
+}
+
 // END #include <linux/slab.h>
