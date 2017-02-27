@@ -2,7 +2,7 @@
 [    ].. ./include/linux/gfp.h
 [    ]... ./include/linux/mmdebug.h
 [    ].... ./include/linux/bug.h
-[    ]..... ./arch/x86/include/asm/bug.h
+[DONE]..... ./arch/x86/include/asm/bug.h
 [DONE]...... ./include/asm-generic/bug.h
 [DONE]....... ./include/linux/compiler.h
 [INC ]........ ./include/linux/compiler-gcc.h
